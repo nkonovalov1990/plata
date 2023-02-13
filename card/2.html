@@ -1,0 +1,133 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<style>
+    html, body {
+        min-height: 100%;
+        height: 100%;
+    }
+
+    body {
+        background: linear-gradient(to bottom, #f6f7fc 0%, #d5e1e8 40%);
+        transform-style: preserve-3d;
+        transform: perspective(800px);
+    }
+
+    iframe {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .poster {
+        width: 500px;
+        height: 281px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -140px;
+        margin-left: -250px;
+        border-radius: 5px;
+        box-shadow: 0 45px 100px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+    }
+
+    .poster [class*='layer-'] {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        transition: 0.1s;
+    }
+
+    .shine {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+    }
+
+    .layer-1 {
+        background: #c8cde2;
+        z-index: 1;
+    }
+
+    .layer-2 {
+        z-index: 2;
+    }
+
+    .layer-3 {
+        z-index: 3;
+    }
+
+    .layer-2 {
+        opacity: 0.2;
+    }
+
+    .layer-3 {
+        background-size: 50% !important;
+        background-position: center !important;
+    }
+
+</style>
+<body>
+<div class="poster" data-offset="10">
+    <div class="shine"></div>
+    <div class="layer-1"></div>
+    <div class="layer-2" data-offset="20"></div>
+    <div class="layer-3" data-offset="40"></div>
+</div>
+
+<script>
+    (function () {
+        var $layer, $poster, $shine;
+
+        $poster = $('.poster');
+
+        $shine = $('.shine');
+
+        $layer = $('div[class*="layer-"]');
+
+        $(window).on('mousemove', function (e) {
+            var angle, dx, dy, h, offsetPoster, offsetX, offsetY, theta, transformPoster, w;
+            w = $(window).width();
+            h = $(window).height();
+            offsetX = 0.5 - e.pageX / w;
+            offsetY = 0.5 - e.pageY / h;
+            offsetPoster = $poster.data('offset');
+            transformPoster = 'translateY(' + -offsetX * offsetPoster + 'px) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 2)) + 'deg)';
+            dy = e.pageY - h / 2;
+            dx = e.pageX - w / 2;
+            theta = Math.atan2(dy, dx);
+            angle = theta * 180 / Math.PI;
+            if (angle < 0) {
+                angle = angle + 360;
+            }
+            $poster.css('transform', transformPoster);
+
+            $shine.css('background', 'linear-gradient(' + (angle - 90) + 'deg, ' +
+                'rgba(165, 255, 244,' + e.pageY / h / 1.5 + ') 0%,' +
+                'rgba(252,193,252,' + e.pageY / h / 1.5 + ') 25%,' +
+                'rgba(188,255,217,' + e.pageY / h / 1.5 + ') 50%,' +
+                'rgba(245,247,163,' + e.pageY / h / 1.5 + ') 75%,' +
+                'rgba(165, 255, 244,' + e.pageY / h / 1.5 + ') 100%,' +
+                'rgba(47,201,226,0) 0%), url("./1.jpg")'
+            );
+            return $layer.each(function () {
+                var $this, offsetLayer, transformLayer;
+                $this = $(this);
+                offsetLayer = $this.data('offset') || 0;
+                transformLayer = 'translateX(' + offsetX * offsetLayer + 'px) translateY(' + offsetY * offsetLayer + 'px)';
+                return $this.css('transform', transformLayer);
+            });
+        });
+    }).call(this);
+</script>
+</body>
+</html>

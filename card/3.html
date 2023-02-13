@@ -1,0 +1,191 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<style>
+    html, body {
+        min-height: 100%;
+        height: 100%;
+    }
+
+    body {
+        background: linear-gradient(to bottom, #f6f7fc 0%, #d5e1e8 40%);
+        transform-style: preserve-3d;
+        transform: perspective(800px);
+    }
+
+    iframe {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .poster {
+        width: 500px;
+        height: 281px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -140px;
+        margin-left: -250px;
+        border-radius: 5px;
+        box-shadow: 0 45px 100px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+    }
+
+    .poster [class*='layer-'] {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        transition: 0.1s;
+    }
+
+    .shine {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        background-color: transparent;
+        background-image:url('./1.jpg');
+    }
+
+    .shine2 {
+        position: absolute;
+        left: -500px;
+        top: -500px;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        width: 2000px;
+        height: 2000px;
+        background-color: transparent;
+        opacity: 0.6;
+        background-image:
+                repeating-radial-gradient( circle at 0 0%, transparent 0, #a5fff4 0px ),
+                repeating-radial-gradient( circle at 0 25%, transparent 0, #fcc1fc 0px ),
+                repeating-radial-gradient( circle at 0 50%, transparent 0, #bcffd9 0px ),
+                repeating-radial-gradient( circle at 0 75%, transparent 0, #f5f7a3 0px ),
+                repeating-radial-gradient( circle at 0 100%, transparent 0, #a5fff4 0px );
+        background-repeat: repeat;
+    }
+
+    .layer-1 {
+        background: #c8cde2;
+        z-index: 1;
+    }
+
+    .layer-2 {
+        z-index: 2;
+    }
+
+    .layer-3 {
+        z-index: 3;
+    }
+
+    .layer-2 {
+        opacity: 0.2;
+    }
+
+    .layer-3 {
+        background-size: 50% !important;
+        background-position: center !important;
+    }
+
+</style>
+<body>
+<div class="poster" data-offset="10">
+    <div class="shine"></div>
+    <div class="shine2"></div>
+    <div class="layer-1"></div>
+    <div class="layer-2" data-offset="20"></div>
+    <div class="layer-3" data-offset="40"></div>
+</div>
+
+<script>
+    (function () {
+        var $layer, $poster, $shine;
+
+        $poster = $('.poster');
+
+        $shine = $('.shine2');
+
+        $layer = $('div[class*="layer-"]');
+
+        $(window).on('mousemove', function (e) {
+            var angle, dx, dy, h, offsetPoster, offsetX, offsetY, theta, transformPoster, w;
+            w = $(window).width();
+            h = $(window).height();
+            offsetX = 0.5 - e.pageX / w;
+            offsetY = 0.5 - e.pageY / h;
+            offsetPoster = $poster.data('offset');
+            transformPoster = 'translateY(' + -offsetX * offsetPoster + 'px) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 2)) + 'deg)';
+            dy = e.pageY - h / 2;
+            dx = e.pageX - w / 2;
+            theta = Math.atan2(dy, dx);
+            angle = theta * 180 / Math.PI;
+            if (angle < 0) {
+                angle = angle + 360;
+            }
+            $poster.css('transform', transformPoster);
+            console.log(dy)
+            console.log(dx)
+            var step = 10;
+            var gradientColors = '';
+            var colors = [
+                ['175,100%,51%', 28, 35],
+                ['205,100%,51%', 96, 56],
+                ['50,100%,51%', 81, 44],
+                ['264,100%,51%', 54, 23],
+                ['295,100%,51%', 70, 4],
+                ['325,100%,51%', 53, 56],
+                ['355,100%,51%', 26, 12],
+                ['25,100%,51%', 5, 89],
+                ['55,100%,51%', 13, 44],
+                ['85,100%,51%', 77, 77],
+                ['145,100%,51%', 29, 81],
+            ];
+            for (var i = 0; i < colors.length; i++) {
+                // console.log(offsetX);
+                // console.log(offsetX);
+                var color = colors[i];
+                var hsla = color[0];
+                var percentX = color[1];
+                var percentY = color[2];
+                // console.log(Math.abs(offsetX)+step*i*10000);
+                // console.log(Math.abs(offsetY)+step*i*10000);
+                gradientColors += 'radial-gradient(at ' + percentX + '% ' + percentY + '%, hsla(' + hsla + ',' + (e.pageY / h)/2 + ') 0px, transparent ' + 50 + '%)'
+                    + (i === colors.length-1 ? '' : ',')
+            }
+            console.log(gradientColors);
+            $shine.css('transform', 'rotate('+(angle - 90)+'deg)');
+            $shine.css('background-image', gradientColors);
+
+            // var hardcodeColors = 'rgba(255,0,0,' + e.pageY / h + ') 0%,' +
+            // 'rgba(255,154,0,' + e.pageY / h + ') 10%,' +
+            // 'rgba(208,222,33,' + e.pageY / h + ') 20%,' +
+            // 'rgba(79,220,74,' + e.pageY / h + ') 30%,' +
+            // 'rgba(63,218,216,' + e.pageY / h + ') 40%,' +
+            // 'rgba(47,201,226,' + e.pageY / h + ') 50%,' +
+            // 'rgba(28,127,238,' + e.pageY / h + ') 60%,' +
+            // 'rgba(95,21,242,' + e.pageY / h + ') 70%,' +
+            // 'rgba(186,12,248,' + e.pageY / h + ') 80%,' +
+            // 'rgba(251,7,217,' + e.pageY / h + ') 90%,' +
+            // 'rgba(255,0,1,' + e.pageY / h + ') 100%';
+            return $layer.each(function () {
+                var $this, offsetLayer, transformLayer;
+                $this = $(this);
+                offsetLayer = $this.data('offset') || 0;
+                transformLayer = 'translateX(' + offsetX * offsetLayer + 'px) translateY(' + offsetY * offsetLayer + 'px)';
+                return $this.css('transform', transformLayer);
+            });
+        });
+    }).call(this);
+</script>
+</body>
+</html>
