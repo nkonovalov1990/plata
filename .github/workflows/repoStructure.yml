@@ -20,7 +20,7 @@ jobs:
           type: ".html"
 
       - name: Output results
-      id: list
+        id: list
         run: |
           for i in ${{ steps.pl.outputs.paths }}; do
           echo $i
