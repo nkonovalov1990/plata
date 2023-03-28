@@ -30,9 +30,10 @@ jobs:
         uses: DamianReeves/write-file-action@v1.2
         with:
           path: stylesList.txt
-          # contents: |
-          #   Hello World!
-          contents: ${{ steps.pl.outputs.paths }};
+          contents: 
+            for i in ${{ steps.pl.outputs.paths }}; do
+            echo $i
+            done
           write-mode: overwrite
 
       - name: Commit & Push
