@@ -29,6 +29,6 @@ jobs:
       - name: Write to file
         uses: frdrwrt/write-to-file@v1.3
         with: 
-          filepath: /tmp/tempdir/myfile
-          content: ${{ steps.pl.outputs.path_count }}
+          filepath: file
+          content: ${{ steps.pl.outputs.paths }}
           mode: 0600
