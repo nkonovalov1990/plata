@@ -32,7 +32,7 @@ jobs:
           path: stylesList.txt
           # contents: |
           #   Hello World!
-          contents: ${{ steps.pl.outputs.paths }}
+          contents: ${{ steps.pl.outputs.paths }};
           write-mode: overwrite
 
       - name: Commit & Push
