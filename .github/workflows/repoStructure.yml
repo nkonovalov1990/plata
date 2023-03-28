@@ -22,7 +22,7 @@ jobs:
       - name: Output results
         id: list
         run: |
-          for i in ${{ steps.pl.outputs.paths }}; do
+          for i in ${{steps.pl.outputs.paths}}; do
           echo $i
           done
 
@@ -30,7 +30,7 @@ jobs:
         uses: DamianReeves/write-file-action@v1.2
         with: 
           path: stylesList.txt
-          contents: ${{steps.pl.outputs.paths}}
+          contents: ${{steps.pl.outputs.paths\n}}
           write-mode: overwrite
 
       - name: Commit & Push
