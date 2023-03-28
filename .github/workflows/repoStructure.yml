@@ -20,17 +20,20 @@ jobs:
           type: ".html"
 
       - name: Output results
-        id: list
         run: |
           for i in ${{steps.pl.outputs.paths}}; do
           echo $i
           done
+        env:
+          list: test324;
+
 
       - name: Write File
         uses: DamianReeves/write-file-action@v1.2
         with: 
           path: stylesList.txt
-          contents: ${{steps.pl.outputs.paths }}
+          # contents: ${{steps.pl.outputs.paths }}
+          contents: $test
           write-mode: overwrite
 
       - name: Commit & Push
