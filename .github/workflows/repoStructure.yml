@@ -30,7 +30,9 @@ jobs:
         with:
           path: stylesList.txt
           contents: |
-            ${{ steps.pl.outputs.paths }};
+            for i in ${{ steps.pl.outputs.paths }}; do
+            echo $i
+            done
           write-mode: overwrite
 
       - name: Commit & Push
