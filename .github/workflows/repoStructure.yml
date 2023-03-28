@@ -25,3 +25,10 @@ jobs:
           for i in ${{ steps.pl.outputs.paths }}; do
           echo $i
           done
+
+      - name: Write to file
+        uses: actions/write-to-file@v1.0
+        with: 
+          filepath: /tmp/tempdir/myfile
+          content: ${{ steps.pl.outputs.path_count }}
+          mode: 0600
