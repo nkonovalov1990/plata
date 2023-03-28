@@ -25,7 +25,10 @@ jobs:
           echo $i
           done
         env:
-          list: test324;
+          list: |
+          for i in ${{steps.pl.outputs.paths}}; do
+          echo $i
+          done
 
 
       - name: Write File
@@ -33,7 +36,7 @@ jobs:
         with: 
           path: stylesList.txt
           # contents: ${{steps.pl.outputs.paths }}
-          contents: $test
+          contents: ${{test}}
           write-mode: overwrite
 
       - name: Commit & Push
