@@ -29,6 +29,6 @@ jobs:
       - name: Write to file
         uses: frdrwrt/write-to-file@v1.3
         with: 
-          filepath: file
+          filepath: styleList.txt
           content: test-123
           # mode: "0600"
