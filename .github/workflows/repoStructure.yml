@@ -28,9 +28,9 @@ jobs:
 
       - name: Write File
         uses: DamianReeves/write-file-action@v1.2
-        with:
+        with: 
           path: stylesList.txt
-          contents: ${{ steps.list.outputs.paths }}
+          contents: ${{ steps.list.outputs.run }}
           write-mode: overwrite
 
       - name: Commit & Push
