@@ -29,7 +29,7 @@ jobs:
       - name: Write File
         uses: DamianReeves/write-file-action@v1.2
         with:
-          path: path/to/file.js
+          path: stylesList.txt
           contents: |
             Hello World!
           write-mode: overwrite
