@@ -26,9 +26,10 @@ jobs:
           echo $i
           done
 
+    saveToFile:
       - name: Write to file
         uses: frdrwrt/write-to-file@v1.3
         with: 
-          filepath: styleList.txt
+          filepath: stylesList.txt
           content: test-123
           # mode: "0600"
