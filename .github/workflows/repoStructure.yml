@@ -27,7 +27,7 @@ jobs:
           done
 
       - name: Write to file
-        uses: actions/write-to-file@v1.0
+        uses: frdrwrt/write-to-file@v1.3
         with: 
           filepath: /tmp/tempdir/myfile
           content: ${{ steps.pl.outputs.path_count }}
