@@ -36,7 +36,7 @@ jobs:
         with: 
           path: stylesList.txt
           # contents: ${{steps.pl.outputs.paths }}
-          contents: {$list}
+          contents: ${{env.list}}
           write-mode: overwrite
 
       - name: Commit & Push
