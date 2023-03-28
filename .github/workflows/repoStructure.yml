@@ -26,13 +26,14 @@ jobs:
           echo $i
           done
 
-  saveToFile:
-    name: Write to file
-    runs-on: ubuntu-latest
-    steps:
-      - name: Write to file
-        uses: frdrwrt/write-to-file@v1.3
-        with: 
-          filepath: stylesList.txt
-          content: test-123
-          # mode: "0600"
+      - name: Write File
+        uses: DamianReeves/write-file-action@v1.2
+        with:
+          path: path/to/file.js
+          contents: |
+            Hello World!
+          write-mode: overwrite
+
+        
+
+
