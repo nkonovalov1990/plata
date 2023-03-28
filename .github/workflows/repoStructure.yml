@@ -5,12 +5,12 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.filelist.outputs.file_names }}
     steps:
       - uses: actions/checkout@v2
-      - name: Write a multi-line message
-        run: |
-          echo This demo file shows a very basic and easy-to-understand workflow.
-      - uses: the-coding-turtle/ga-file-list@v0.2
-        with:
-          file_extension: "html"
-          ignore_files_starts_with_delimiter: "."
+      - name: Get all html files
+        id: filelist
+        uses: the-coding-turtle/ga-file-list@v0.2
+          with:
+            file_extension: "html"
