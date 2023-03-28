@@ -12,6 +12,5 @@ jobs:
       - name: Get all html files
         id: filelist
         uses: the-coding-turtle/ga-file-list@v0.2
-          with:
-            directory: "root"
-            file_extension: "html"
+        with:
+          file_extension: "html"
