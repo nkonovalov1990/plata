@@ -28,7 +28,7 @@ jobs:
 
   saveToFile:
     name: Write to file
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Write to file
         uses: frdrwrt/write-to-file@v1.3
