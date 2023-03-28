@@ -1,16 +1,5 @@
 name: repository structure
-
 on: [push]
-    needs: list-files
-    strategy:
-      matrix:
-        paths: ${{ fromJson(needs.list-files.outputs.paths) }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Output results
-        run: |
-          echo ${{ matrix.paths }}
-
 jobs:
   list:
     name: Path lister
