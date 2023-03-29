@@ -17,7 +17,8 @@ jobs:
         uses: Rishabh510/Path-lister-action@master
         with:
           # path: Path.home()
-          path: "../workspace/."
+          # path: "../workspace/."
+          path: "../."
           type: ".html"
 
       - name: Output results
