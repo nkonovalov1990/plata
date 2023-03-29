@@ -1,1 +1,1 @@
-../workspace/Tooltip-dec-2022.html ../workspace/Additional-card-info.html ../workspace/index.html ../workspace/Freeze-button-dec-2022.html ../workspace/card/2.html ../workspace/card/1.html ../workspace/card/3.html  + ";"
+../workspace/Tooltip-dec-2022.html ../workspace/Additional-card-info.html ../workspace/index.html ../workspace/Freeze-button-dec-2022.html ../workspace/card/2.html ../workspace/card/1.html ../workspace/card/3.html
