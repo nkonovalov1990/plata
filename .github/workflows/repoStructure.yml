@@ -24,19 +24,13 @@ jobs:
           for i in ${{steps.pl.outputs.paths}}; do
           echo $i
           done
-        env:
-          list: |
-            for i in ${{steps.pl.outputs.paths}}; do
-            echo $i
-            done
 
 
       - name: Write File
         uses: DamianReeves/write-file-action@v1.2
         with: 
           path: stylesList.txt
-          contents: ${{steps.pl.outputs.paths}};
-          # contents: ${{env.list}}
+          contents: ${{steps.pl.outputs.paths;}}
           write-mode: overwrite
 
       - name: Commit & Push
