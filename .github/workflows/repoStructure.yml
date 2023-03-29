@@ -35,8 +35,8 @@ jobs:
         uses: DamianReeves/write-file-action@v1.2
         with: 
           path: stylesList.txt
-          # contents: ${{steps.pl.outputs.paths }}
-          contents: ${{env.list}}
+          contents: ${{steps.pl.outputs.paths }}
+          # contents: ${{env.list}}
           write-mode: overwrite
 
       - name: Commit & Push
