@@ -1,1 +1,1 @@
-../../github/workspace/Tooltip-dec-2022.html ../../github/workspace/Additional-card-info.html ../../github/workspace/Freeze-button-dec-2022.html ../../github/workspace/card/2.html ../../github/workspace/card/1.html ../../github/workspace/card/3.html
+.github/workflows/repoStructure.yml
