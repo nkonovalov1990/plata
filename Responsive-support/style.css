@@ -3,6 +3,7 @@
   --background-base-1: rgba(245, 246, 250, 1);
   --background-neutral-2: rgba(195, 202, 217, 1);
   --background-neutral-3: rgba(163, 173, 191, 1);
+  --background-neutral-4: rgba(133, 145, 166, 1);
   --text-icons-primary: rgba(29, 32, 38, 1);
 }
 
@@ -43,6 +44,10 @@ body {
     background: var(--background-neutral-3);
 }
 
+.button:active {
+    background: var(--background-neutral-4);
+}
+
 .active {
     background: var(--background-base);
     box-shadow: 0rem 1rem 2rem 0rem rgba(38, 48, 64, 0.12);
@@ -51,6 +56,10 @@ body {
 .active:hover {
     background: var(--background-base);
     cursor: auto;
+}
+
+.active:active {
+    background: var(--background-base);
 }
 
 #workingArea > div {
@@ -147,6 +156,10 @@ body {
 #procedure-wrapper:hover {
     background-color: var(--background-neutral-2);
     cursor: pointer;
+}
+
+#procedure-wrapper:active {
+    background-color: var(--background-neutral-3);
 }
 
 #bolt-icon {
