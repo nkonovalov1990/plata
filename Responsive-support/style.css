@@ -2,6 +2,7 @@
   --background-base: rgba(255, 255, 255, 1);
   --background-base-1: rgba(245, 246, 250, 1);
   --background-neutral-2: rgba(195, 202, 217, 1);
+  --background-neutral-3: rgba(163, 173, 191, 1);
   --text-icons-primary: rgba(29, 32, 38, 1);
 }
 
@@ -35,6 +36,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .1s;
+}
+
+.button:hover {
+    background: var(--background-neutral-3);
 }
 
 .active {
