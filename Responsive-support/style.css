@@ -1,0 +1,166 @@
+:root {
+  --background-base: rgba(255, 255, 255, 1);
+  --background-base-1: rgba(245, 246, 250, 1);
+  --background-neutral-2: rgba(195, 202, 217, 1);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+html {
+    font-size: 4px;
+    /* min-width: 1260px; */
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-base-1);
+    justify-content: start;
+}
+
+.button {
+    border-radius: 3rem;
+    background: var(--background-neutral-2);
+    height: 12rem;
+    width: 12rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    background: var(--background-base);
+    box-shadow: 0rem 1rem 2rem 0rem rgba(38, 48, 64, 0.12);
+}
+
+#workingArea > div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+    padding-top: 6rem;
+    padding-right: 5rem;
+    box-sizing: border-box;
+}
+
+#menu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 5rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+    transition: .1s;
+}
+
+.chatList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: end;
+    gap: 4rem;
+}
+
+#workingArea {
+    background-color: var(--background-base);
+    font-size: 6rem;
+    width: 100%;
+    flex-grow: 10;
+    flex-shrink: 0;
+    flex-basis: 1080px;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rem 1rem 2rem 0rem rgba(38, 48, 64, 0.12);
+    overflow: hidden;
+}
+
+.fixed360 {
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 360px;
+}
+
+#chat {
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 360px;
+    max-width: 560px;
+    border-right: 1px solid var(--background-neutral-2);
+    border-left: 1px solid var(--background-neutral-2); 
+}
+
+#burger-icon {
+    height: 4rem;
+    width: 4rem;
+    background-image: url("burger.svg");
+}
+
+#procedure {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 14rem;
+    transition: .5s;
+}
+
+#procedure-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 14rem;
+    transition: .1s;
+}
+
+#procedure-wrapper:hover {
+    background-color: var(--background-neutral-2);
+}
+
+#bolt-icon {
+    height: 6rem;
+    width: 6rem;
+    background-image: url("bolt.svg");
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+@media only screen and (max-width: 1550px) {
+    #menu {
+        flex-grow: 0;
+        transition: .5s; 
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    #procedure {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 14rem;
+        transition: .5s;
+    }
+    
+    #procedure-wrapper {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 14rem;
+    }
+}
