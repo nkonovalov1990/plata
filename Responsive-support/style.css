@@ -40,6 +40,7 @@ body {
 .active {
     background: var(--background-base);
     box-shadow: 0rem 1rem 2rem 0rem rgba(38, 48, 64, 0.12);
+    cursor: auto;
 }
 
 #workingArea > div {
