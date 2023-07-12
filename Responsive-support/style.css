@@ -136,6 +136,7 @@ body {
 
 #procedure-wrapper:hover {
     background-color: var(--background-neutral-2);
+    cursor: pointer;
 }
 
 #bolt-icon {
