@@ -16,12 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
           }, 500);
 
           setTimeout(() => {
-            element.style.transition = 'opacity 250ms';
+            element.style.transition = 'opacity 200ms';
             element.style.opacity = 1;
           }, 1000);
 
           setTimeout(() => {
-            element.style.transition = 'all 250ms';
+            element.style.transition = 'filter 100ms';
+            element.style.transition = 'color 200ms';
             element.style.filter = 'blur(0px)';
             element.style.color = 'rgba(0, 0, 0, 0.8)';
           }, 1500);
