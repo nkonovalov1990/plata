@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     element.style.height = lineHeight;
 
     // Генерируем и применяем случайную ширину
-    const randomWidth = Math.floor(Math.random() * 51) + 30;
+    const randomWidth = Math.floor(Math.random() * 50) + 30;
     element.style.width = randomWidth + '%';
   });
 

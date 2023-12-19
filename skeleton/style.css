@@ -160,8 +160,8 @@ body {
 	background: linear-gradient(
 		to right, 
 		var(--grays-neutral-1) 0%, 
-		var(--grays-neutral-1-alpha) 40%,
-		var(--grays-neutral-1-alpha) 60%,  
+		var(--grays-neutral-1-alpha) 33%,
+		var(--grays-neutral-1-alpha) 66%,  
 		var(--grays-neutral-1) 100%
 	);
 	background-size: 200% 100%;
@@ -175,7 +175,6 @@ body {
       background-position: -100% 0%;
     }
 }
-  
 
 /* .gradient-left-to-right {
 	border-radius: 20px 0 0 20px;
