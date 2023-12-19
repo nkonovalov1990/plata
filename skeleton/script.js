@@ -1,31 +1,53 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const skeletonElements = document.querySelectorAll('.skeleton');
+
+  // Получаем все элементы с классом, содержащим слово 'gradient'
+  const gradientElements = document.querySelectorAll(".text");
+
+  // Перебираем все найденные элементы
+  gradientElements.forEach(element => {
+    // Получаем высоту строки элемента
+    const lineHeight = getComputedStyle(element).lineHeight;
+
+    // Устанавливаем высоту строки в качестве высоты элемента
+    element.style.height = lineHeight;
+
+    // Генерируем и применяем случайную ширину
+    const randomWidth = Math.floor(Math.random() * 51) + 30;
+    element.style.width = randomWidth + '%';
+  });
+
+  const skeletonElements = document.querySelectorAll('.text');
   setTimeout(() => {  
     skeletonElements.forEach(element => {
         // Устанавливаем случайную задержку до 5 секунд для каждого элемента
-        const delay = Math.random() * 9000;
+        const delay = Math.random() * 10000;
 
         setTimeout(() => {
-          element.style.transition = 'opacity 500ms';
-          element.style.opacity = 0;
+          element.animate([
+            { opacity: 1 },
+            { opacity: 0 }
+          ], {
+            duration: 200,
+            fill: 'forwards'
+          });
 
           setTimeout(() => {
-            element.classList.remove('gradient-left-to-right', 'gradient-right-to-left', 'gradient-center');
             element.style.animation = 'none';
-            element.style.color = 'rgba(15, 43, 102, 0.22)';
-          }, 500);
-
-          setTimeout(() => {
-            element.style.transition = 'opacity 200ms';
-            element.style.opacity = 1;
-          }, 1000);
-
-          setTimeout(() => {
-            element.style.transition = 'filter 100ms';
-            element.style.transition = 'color 200ms';
-            element.style.filter = 'blur(0px)';
+            element.classList.remove('skeleton-fill', 'gradient-left-to-right', 'gradient-right-to-left', 'gradient-center');
             element.style.color = 'rgba(0, 0, 0, 0.8)';
-          }, 1500);
+            element.style.width = 'auto';
+            element.style.height = 'auto';
+          }, 300);
+
+          element.animate([
+            { opacity: 0 },
+            { opacity: 1 }
+          ], {
+            delay: 500,
+            duration: 200,
+            fill: 'forwards'
+          });
+        
         }, delay);
     });
   }, 3000);
