@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
             { opacity: 1 },
             { opacity: 0 }
           ], {
-            duration: 200,
+            duration: 300,
             fill: 'forwards'
           });
 
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
             { opacity: 1 }
           ], {
             delay: 500,
-            duration: 200,
+            duration: 300,
             fill: 'forwards'
           });
         
