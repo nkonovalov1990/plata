@@ -1,0 +1,40 @@
+<div class="card-wrapper" style="background: var(--neutral-100);">
+    <div class="card-content">
+        8297
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <circle cx="5" cy="5" r="5" fill="#EB001B"/>
+            <circle cx="11" cy="5" r="5" fill="#F79E1B"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00043 9.00049C6.78574 8.0883 6 6.63581 6 4.9998C6 3.36417 6.78537 1.91198 7.99957 0.999756C9.21426 1.91194 10 3.36443 10 5.00044C10 6.63607 9.21463 8.08826 8.00043 9.00049Z" fill="#F16122"/>
+        </svg>
+    </div>
+</div>
+<div class="card-wrapper" style="background: var(--neutral-100);">
+    <div class="card-content">
+        4321
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <circle cx="5" cy="5" r="5" fill="#EB001B"/>
+            <circle cx="11" cy="5" r="5" fill="#F79E1B"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00043 9.00049C6.78574 8.0883 6 6.63581 6 4.9998C6 3.36417 6.78537 1.91198 7.99957 0.999756C9.21426 1.91194 10 3.36443 10 5.00044C10 6.63607 9.21463 8.08826 8.00043 9.00049Z" fill="#F16122"/>
+        </svg>
+    </div>
+</div>
+<div class="card-wrapper" style="background: var(--neutral-100);">
+    <div class="card-content">
+        3812
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <circle cx="5" cy="5" r="5" fill="#EB001B"/>
+            <circle cx="11" cy="5" r="5" fill="#F79E1B"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00043 9.00049C6.78574 8.0883 6 6.63581 6 4.9998C6 3.36417 6.78537 1.91198 7.99957 0.999756C9.21426 1.91194 10 3.36443 10 5.00044C10 6.63607 9.21463 8.08826 8.00043 9.00049Z" fill="#F16122"/>
+        </svg>
+    </div>
+</div>
+<div class="card-wrapper" style="background: var(--neutral-100);">
+    <div class="card-content">
+        9413
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <circle cx="5" cy="5" r="5" fill="#EB001B"/>
+            <circle cx="11" cy="5" r="5" fill="#F79E1B"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00043 9.00049C6.78574 8.0883 6 6.63581 6 4.9998C6 3.36417 6.78537 1.91198 7.99957 0.999756C9.21426 1.91194 10 3.36443 10 5.00044C10 6.63607 9.21463 8.08826 8.00043 9.00049Z" fill="#F16122"/>
+        </svg>
+    </div>
+</div>
