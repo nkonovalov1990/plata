@@ -1,0 +1,42 @@
+.skeleton {
+	color: rgba(0, 0, 0, 0);
+	border-radius: 20px;
+}
+
+.skeleton-fill {
+	/* filter: blur(4px); */
+	animation: skeleton 2000ms infinite linear;
+	background: linear-gradient(
+		to right, 
+		var(--neutral-100) 0%, 
+		var(--neutral-100-alpha) 33%,
+		var(--neutral-100-alpha) 66%,  
+		var(--neutral-100) 100%
+	); 
+	background-size: 200% 100%;
+}
+
+@keyframes skeleton {
+    0% {
+    	background-position: 100% 0%;
+    }
+    100% {
+    	background-position: -100% 0%;
+    }
+}
+
+.cards-container-height-change {
+	animation: cards 150ms ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes cards {
+    0% {
+		opacity: 0;
+		height: 56px;
+    }
+    100% {
+		opacity: 1;
+		height: 128px;
+    }
+}
