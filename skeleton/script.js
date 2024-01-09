@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
     element.style.width = randomWidth + '%';
   });
 
-
   document.getElementById('pulse').animate([
     { opacity: 1 },
     { opacity: 0 }
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
     Array.from(btns).forEach(btn => {
         btn.classList.remove('btn-gray');
     });
-    
     
     setTimeout(() => {
 
@@ -153,7 +151,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
   }, 6300);
 });
-
-
-
-
