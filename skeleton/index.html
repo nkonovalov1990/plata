@@ -4,11 +4,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="preconnect" href="https://rsms.me/">
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-        <link href="style.css" rel="stylesheet">
+        <link href="animation.css" rel="stylesheet">
         <link href="skeleton.css" rel="stylesheet"> 
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="main">
+        <div class="pulse" id="pulse">
+            <div class="wave">
+                <div class="circle"></div>
+            </div>
+            <span>Take a deep breath</span>
+        </div>
+        <div class="main" style="display: none;" id="main">
             <div class="fixed360">
                 <div class="product-widget" id="credit-account">
                     <div class="product-widget-header">
@@ -29,8 +36,8 @@
                             <div class="values">
                                 <div class="skeleton skeleton-fill text">30 Sep</div>
                                 <div class="skeleton skeleton-fill text">$300.00</div>
-                                <div class="skeleton skeleton-fill text link">$12,501.82</div>
-                                <div class="skeleton skeleton-fill text link">$16,000.00</div>
+                                <div class="skeleton skeleton-fill text">$12,501.82</div>
+                                <div class="skeleton skeleton-fill text">$16,000.00</div>
                                 <div class="skeleton skeleton-fill text">$17,778.30</div>
                             </div>
                         </div>
@@ -70,7 +77,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="card-wrapper  opacity-0">
+                        <div class="card-wrapper opacity-0">
                             <div class="card-content">
                                 9413
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
@@ -97,7 +104,7 @@
                                 <div class="skeleton skeleton-fill text">Left to pay in this month</div>
                             </div>
                             <div class="values">
-                                <div class="skeleton skeleton-fill text link">−$11,000.00</div>
+                                <div class="skeleton skeleton-fill text">−$11,000.00</div>
                                 <div class="skeleton skeleton-fill text">21 Sep</div>
                                 <div class="skeleton skeleton-fill text">$3,000.00</div>
                             </div>
@@ -119,7 +126,7 @@
                                 <div class="skeleton skeleton-fill text">Left to pay in this month</div>
                             </div>
                             <div class="values">
-                                <div class="skeleton skeleton-fill text link">−$7,000.00</div>
+                                <div class="skeleton skeleton-fill text">−$7,000.00</div>
                                 <div class="skeleton skeleton-fill text">21 Sep</div>
                                 <div class="skeleton skeleton-fill text">$3,000.00</div>
                             </div>
@@ -131,7 +138,7 @@
                 Chat
             </div>
             <div class="fixed360" id="transaction">
-                <div class="btn btn-40 btn-gray">
+                <div class="btn btn-40 btn-gray skeleton skeleton-fill">
                     Back
                 </div>
                 <div class="section header" >
@@ -182,10 +189,10 @@
                     </div>
                 </div>
                 <div class="footer">
-                    <div class="btn btn-40 btn-gray skeleton skeleton-fill plug">
+                    <div class="btn btn-40 btn-gray skeleton skeleton-fill">
                         Dispute operation
                     </div>
-                    <div class="btn btn-40 btn-gray skeleton skeleton-fill plug">
+                    <div class="btn btn-40 btn-gray skeleton skeleton-fill">
                         Recalculate cashback
                     </div>
                 </div>

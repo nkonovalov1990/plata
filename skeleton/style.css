@@ -45,6 +45,49 @@ body {
 	line-height: 16px;
 }
 
+.pulse {
+	min-height: 100svh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: -60px;
+	gap: 8px;
+}
+
+.pulse span {
+	font-size: 17px;
+	line-height: 20px;
+	font-weight: 400;
+	color: var(--neutral-120);
+}
+
+.wave {
+	width: 96px;
+	height: 96px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100px;
+	border: 1px solid var(--neutral-100);
+	border-radius: 100px;
+	animation: distribution;
+	animation-duration: 8s;
+	animation-timing-function: cubic-bezier(.5, 0, .5, 1);
+	animation-iteration-count: infinite;
+}
+  
+.circle {
+	width: 96px;
+	height: 96px;
+	border-radius: 96px;
+	background-color: var(--neutral-100);
+	animation: pulse;
+	animation-duration: 8s;
+	animation-timing-function: cubic-bezier(.5, 0, .5, 1);
+	animation-iteration-count: infinite;
+}
+
 .main {
 	display: flex;
 	padding: 0;
@@ -54,9 +97,17 @@ body {
     flex-shrink: 0;
     flex-basis: 1080px;
     max-width: 1200px;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0);
 	box-sizing: border-box;
 	box-shadow: 0px 3px 7px 0px rgba(32, 47, 78, 0.09);
+	opacity: 0;
+}
+
+.fadeInUp {
+	animation-name: fadeInUp;
+	animation-delay: 100ms;
+	animation-duration: 500ms;
+    animation-fill-mode: both;
 }
 
 .fixed360 {
