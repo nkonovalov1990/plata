@@ -1,0 +1,79 @@
+{
+  "categories": [
+      "UX Strategy"
+  ],
+  "skills": [
+      "Research and UX/UI roadmap",
+      "Information and content architecture",
+      "Task analysis and scenarios/Job stories",
+      "User flows",
+      "Journey Mapping",
+      "Generating Hypothesis",
+      "Jobs to be done",
+      "Personas",
+      "Value proposition and empathy mapping",
+      "Defining and Prioritizing"
+  ],
+  "levels": [
+      {
+          "name": "Junior",
+          "values": [
+              "Needs help in developing a research plan and roadmap for the creation of the product, has a basic understanding of the goals. Still hesitates about choosing research methods.",
+              "Demonstrates a basic understanding of IA principles. Assists in creating simple architecture for medium-complex products, often based on templates. For example, 'To sum up, what is the difference between Information and content architecture?'",
+              "They are already able to analyze tasks and create simple Job Stories. Can create scenarios based on templates with simple behavior models.",
+              "Tries primitive User flow diagrams for small solutions.",
+              "Can create a map based on the 'As is' and 'To be' templates based on research or by putting themselves in the user's shoes.",
+              "Documents hypotheses from the PM or after conducting research.",
+              "Uses the Jobs to Be Done framework to inform product strategy and design decisions.",
+              "Creates a Persona Map based on conducted interview recordings using a template.",
+              "Assists in creating the Value Proposition and Empathy map.",
+              "Participates in product prioritization and feature definition."
+          ]
+      },
+      {
+          "name": "Middle",
+          "values": [
+              "Actively participates in developing the research plan and design roadmap, understanding how and which methodology to use.",
+              "Applies IA principles to develop information architectures for medium-sized projects with multiple content sections or complex integrations. Uses inputs from IA to create intuitive user experiences. Manages Information and content tasks.",
+              "They are already able to analyze tasks and optimize them by identifying weak points in existing solutions. They begin to integrate behavior science models into job stories and scenarios.",
+              "Creates User flow diagrams and finds places that have not been thought through.",
+              "Can create a map based on the 'As is' and 'To be' templates based on research or by putting themselves in the user's shoes.",
+              "Formulates hypotheses based on research and uses prior opinions for making project decisions.",
+              "Uses the Jobs to Be Done framework to inform product strategy and design decisions.",
+              "Develops detailed persona maps with varied user characteristics and behavior models. Based on user feedback.",
+              "Participated in and created a couple of Value Proposition and Empathy maps for a deeper understanding of target users and motivations and how to address them.",
+              "Proposes project features and analyzes how well they meet users' needs. Collaborates with stakeholders to determine the priorities of constructive elements."
+          ]
+      },
+      {
+          "name": "Senior",
+          "values": [
+              "Develops a comprehensive research strategy aligned with business goals and the product's long-term vision. Creates a UX/UI roadmap, ensuring alignment with the overall product strategy and business goals.",
+              "Has experience in designing complex information architectures for large-scale multi-platform projects, such as Amazon or Yandex Market. Ensures information consistency across various platforms and touchpoints.",
+              "The designer can already optimize and compress, considering user feedback, behavior patterns, and existing and upcoming behavior science models. Combines behavior and business drivers in a single plan that can be understood by both the development and design teams.",
+              "Designs complex user flows that involve interaction between multiple touchpoints and devices.",
+              "Creates complex path maps with various stages that identify pain points and opportunities for personalization based on user interviews.",
+              "Formulates multiple hypotheses and identifies the most important ones for the user and the business.",
+              "Applies the Jobs to Be Done framework at a strategic level to determine the direction of the product.",
+              "Can synthesize multiple feedback channels to generate personas, sees a direct connection between the target audience and personas, and determines how to gather analysis for a new segment.",
+              "Can suggest solutions to help cover user pain points and describe potential solution possibilities.",
+              "Together with the product, works on MVP versions and subsequent releases, documents, and creates tasks with sub-tasks."
+          ]
+      },
+      {
+          "name": "Lead",
+          "values": [
+              "Defines a research vision for the organization, implementing innovations in research methodologies and approaches. Aligns UX strategy with the overall company strategy on a long-term vision, guiding the organization toward developing a user-centered product.",
+              "Defines IA strategy for the organization, identifying best practices and guiding their implementation in projects. Creates frameworks that enable seamless and intuitive cross-platform interactions. Ensures omnichannel IA structures across different platforms and touchpoints.",
+              "The designer of this level optimizes and understands how users behave with various solutions in non-direct competitors, tracking behavior trends and market trends. The designer has already solved complex problems and can create behavior models for complex and simple solutions. They know how to combine research, design, and product behavior science knowledge into behavior-based tasks that are easier to solve than creating new ones. Thus, the designer not only effectively analyzes and creates scenarios but also sees that the scenarios created by other teams are robust products that meet user tasks and exceed their expectations.",
+              "Can teach, consult, and highlight missed areas during consultation.",
+              "Manages the creation of user path maps on an organizational level, forming a general strategy for interacting with the user.",
+              "Stimulates innovation by formulating hypotheses based on future scenarios, for continuous improvement in the future.",
+              "Leads strategic initiatives with the Jobs to Be Done framework to influence the organization's product development.",
+              "Can teach, refine definitions, and mentor.",
+              "Can teach, refine the definition, and mentor.",
+              "Suggests ideas for a long-term perspective, and ensure they are implemented and exist. Creates structured processes for determining MVP versions, and monitors what is actively working."
+          ]
+      }
+  ]
+}

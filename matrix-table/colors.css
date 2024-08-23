@@ -1,0 +1,9 @@
+:root {
+    --primary: rgba(18, 20, 22, 1);
+    --secondary: rgba(23, 28, 38, 0.45);
+    --tertiary: rgba(0, 12, 36, 0.22);
+    --neutral-80: rgba(75, 113, 189, 0.04);
+    --neutral-100: rgba(0, 37, 112, 0.04);
+    --neutral-120: rgba(33, 60, 112, 0.11);
+    --neutral-bg: rgba(245, 246, 249, 1);
+}

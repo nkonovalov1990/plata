@@ -1,0 +1,54 @@
+{
+    "categories": [
+      "Research"
+    ],
+    "skills": [
+      "For whom, why, and what",
+      "Business goals and success metrics",
+      "Constraints",
+      "Direct and Indirect competitors",
+      "Stakeholders"
+    ],
+    "levels": [
+      {
+        "name": "Junior",
+        "values": [
+          "Understands the business task and audience and addresses general questions for specificity.",
+          "Uses business objectives and success metrics in the process of creating a solution.",
+          "Makes decisions based on declared technical and legal restrictions.",
+          "Knows the direct competitors of their product and keeps an eye on them.",
+          "Begins to identify all stakeholders in the product, both from the business and development sides, and understands their specific expectations. Familiar with the development team and developer."
+        ]
+      },
+      {
+        "name": "Middle",
+        "values": [
+          "Analyzes the business task and forms an understanding of how design can help, asking questions to understand the business vision.",
+          "Understands business objectives and success criteria and understands what possible design solutions will help achieve them.",
+          "Asks questions about technical and legal restrictions and tries to understand where there may be problems with the user experience.",
+          "Monitors both direct and indirect competitors, notices new solutions and analyzes why they were implemented in that particular way.",
+          "Conducts simple analysis of all stakeholders to understand their expectations, roles, and areas of influence in the project. There is a stakeholder engagement map at all stages of design."
+        ]
+      },
+      {
+        "name": "Senior",
+        "values": [
+          "Connects product business tasks with user needs and market requirements and asks 'why' questions to form a complete picture and highlight areas that have not been thought through.",
+          "Transforms business and success metrics into design metrics and integrates them into subsequent product design and post-analysis.",
+          "Understands the technical possibilities of development and possible legal restrictions, can immediately say where the approach needs to be changed as it is inconvenient for the user.",
+          "Monitors not only competitors but also market trends in different areas and factors to incorporate them into their solutions.",
+          "Conducts comprehensive analysis of stakeholders to identify complex relationships and potential conflicts. Actively manages stakeholder expectations, ensuring alignment with project goals, and strengthening relationships. A stakeholder engagement map has been defined."
+        ]
+      },
+      {
+        "name": "Lead",
+        "values": [
+          "Sees a direct connection between the task and its impact on overall business goals, can point out problem areas in the overall solution with the business, can rephrase the task and break it down into subtasks.",
+          "Knows which metrics directly affect business metrics and can teach which design metrics to use to influence business.",
+          "Knowing the developers' framework and the main legal restrictions of their possible solutions in design can influence restrictions for user convenience and solution improvement through arguments and facts.",
+          "There is a database with prioritization and analysis of competitors' decisions (direct/indirect, not only trends for the niche but also completely experimental options are collected and analyzed).",
+          "Develops strategic approaches for interacting and collaborating with stakeholders at a high organizational level. Can teach others."
+        ]
+      }
+    ]
+}

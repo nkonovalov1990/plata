@@ -1,0 +1,64 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+.heading-l {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 40px;
+}
+.heading-lm {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 32px;
+}
+.heading-m {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 24px;
+}
+.heading-s {
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+.heading-xs {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+}
+.heading-xxs {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+}
+.heading-xxxs {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 14px;
+}
+.body-l {
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+.body-m {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+.body-s {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}

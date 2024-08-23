@@ -1,0 +1,62 @@
+body {
+    background-color: var(--neutral-bg);
+    color: var(--primary);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+section {
+    margin: 20px;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 6px 34px 0px rgba(32, 47, 78, 0.12);
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Устанавливаем фиксированную ширину для всех ячеек */
+}
+
+.skills-table th,
+.skills-table td {
+    border-bottom: solid 1px var(--tertiary);
+    padding: 20px;
+    text-align: left; /* Выравнивание текста по левому краю */
+    width: 20%; /* Устанавливаем ширину для каждой ячейки в 20% от ширины таблицы */
+    cursor: default;
+}
+
+.skills-table tr:hover {
+    background-color: var(--neutral-80);
+}
+
+.skills-table td:hover {
+    background-color: var(--neutral-80);
+}
+
+.category-header,
+.category-header-row {
+    background-color: var(--neutral-100);
+    z-index: 1000;
+}
+
+.category-header {
+    font-weight: bold;
+    text-align: left;
+    padding: 20px;
+    position: sticky;
+    top: 0; /* Залипание вверху страницы */
+}
+
+.category-header-row th {
+    position: sticky;
+    top: 56px;
+}
+
+.skill-description {
+    padding: 10px 20px;
+}
