@@ -15,6 +15,14 @@ body {
     box-shadow: 0px 6px 34px 0px rgba(32, 47, 78, 0.12);
 }
 
+tr {
+    border-bottom: solid 1px var(--tertiary);
+}
+
+tr:last-of-type {
+    border-bottom: solid 0px;
+}
+
 .skills-table {
     width: 100%;
     border-collapse: collapse;
@@ -23,7 +31,6 @@ body {
 
 .skills-table th,
 .skills-table td {
-    border-bottom: solid 1px var(--tertiary);
     padding: 20px;
     text-align: left; /* Выравнивание текста по левому краю */
     width: 20%; /* Устанавливаем ширину для каждой ячейки в 20% от ширины таблицы */
