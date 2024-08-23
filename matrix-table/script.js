@@ -74,3 +74,36 @@ document.addEventListener("scroll", function() {
         }
     });
 });
+
+document.addEventListener("scroll", function() {
+    const tableWrappers = document.querySelectorAll(".table-wrapper");
+
+    tableWrappers.forEach(wrapper => {
+        const headerRow = wrapper.querySelector('.category-header-row');
+        const lastRow = wrapper.querySelector('.skills-table tbody tr:last-child');
+
+        if (!headerRow || !lastRow) return;
+
+        const headerCells = headerRow.querySelectorAll('th');
+        const headerHeight = headerRow.getBoundingClientRect().height;
+        const lastRowRect = lastRow.getBoundingClientRect();
+
+        // Проверяем, насколько верхняя граница последней строки выше верхней границы окна
+        const distance = lastRowRect.top - headerHeight;
+
+        headerCells.forEach(th => {
+            const currentTop = parseInt(th.style.top) || 0;
+
+            if (distance <= 0 && distance > -56 && currentTop > -56) {
+                th.style.position = 'sticky';
+                th.style.top = `${distance}px`;
+            } else if (distance <= -56) {
+                th.style.position = 'absolute';
+                th.style.top = '-56px';
+            } else if (distance > -56) {
+                th.style.position = 'sticky';
+                th.style.top = `${Math.min(0, distance)}px`;
+            }
+        });
+    });
+});
