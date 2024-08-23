@@ -48,3 +48,13 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Ошибка загрузки данных:', error));
     });
 });
+
+document.addEventListener("scroll", function() {
+    const tableWrapper = document.querySelector(".table-wrapper");
+
+    if (window.scrollY >= 20) {
+        tableWrapper.style.overflow = "visible";
+    } else {
+        tableWrapper.style.overflow = "hidden";
+    }
+});

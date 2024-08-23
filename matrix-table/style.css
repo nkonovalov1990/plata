@@ -7,11 +7,11 @@ body {
     line-height: 16px;
 }
 
-section {
+.table-wrapper {
     margin: 20px;
     background-color: white;
     border-radius: 16px;
-    overflow: visible;
+    overflow: hidden;
     box-shadow: 0px 6px 34px 0px rgba(32, 47, 78, 0.12);
 }
 
