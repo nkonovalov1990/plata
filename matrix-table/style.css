@@ -31,11 +31,11 @@ body {
 }
 
 .skills-table tr:hover {
-    background-color: var(--neutral-80);
+    background-color: var(--neutral-80-opacity);
 }
 
 .skills-table td:hover {
-    background-color: var(--neutral-80);
+    background-color: var(--neutral-80-opacity);
 }
 
 .category-header,
