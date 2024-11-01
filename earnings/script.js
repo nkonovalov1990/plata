@@ -19,35 +19,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const progressBar = document.querySelector('.progress-bar');
-    const progressText = progressBar.querySelector('span');
-
-    function adjustProgressBarAlignment() {
-        const progressBarWidth = progressBar.offsetWidth;
-        const spanWidth = progressText.offsetWidth + 2;
-
-        if (progressBarWidth > spanWidth) {
-            progressBar.style.justifyContent = 'flex-end';
-        } else {
-            progressBar.style.justifyContent = 'flex-start';
-        }
-    }
-
-    // Запуск при загрузке страницы
-    adjustProgressBarAlignment();
-
-    // Обновление при изменении ширины прогресс бара
-    window.addEventListener('resize', adjustProgressBarAlignment);
-
-    // Пример для изменения ширины прогресс бара в зависимости от слайдера
-    const progressSlider = document.getElementById('progress-slider');
-    progressSlider.addEventListener('input', function() {
-        progressBar.style.width = `${progressSlider.value}%`;
-        adjustProgressBarAlignment();
-    });
-});
-
 // Дополнительный код для изменения ширины прогресс бара
 document.getElementById("progress-slider").addEventListener("input", function () {
   const progressBar = document.getElementById("progress-bar");
@@ -82,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-2)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 53%';
-      progressBar.style.justifyContent = 'flex-start';
     } else if (value < 56) {
       progressWidth = ((value - 52) / 4) * 100;
       progressColor = 'var(--step-2-alfa)';
@@ -91,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-3)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 56%';
-      progressBar.style.justifyContent = 'flex-start';
     } else if (value < 68) {
       progressWidth = ((value - 55) / 13) * 100;
       progressColor = 'var(--step-3-alfa)';
@@ -100,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-4)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 68%';
-      progressBar.style.justifyContent = 'flex-start';
     } else if (value < 75) {
       progressWidth = ((value - 67) / 8) * 100;
       progressColor = 'var(--step-4-alfa)';
@@ -109,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-5)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 75%';
-      progressBar.style.justifyContent = 'flex-start';
     } else if (value < 83) {
       progressWidth = ((value - 74) / 9) * 100;
       progressColor = 'var(--step-5-alfa)';
@@ -118,14 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-6)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo кубо 83%';
-      progressBar.style.justifyContent = 'flex-start';
     } else {
       progressWidth = ((value - 82) / 17) * 100;
       progressColor = 'var(--step-6-alfa)';
       progressTextColor = 'var(--step-6)';
       nextBucketColor = 'var(--step-5-alfa)';
       nextBucketTextColor = 'var(--step-5)';
-      progressBar.style.justifyContent = 'flex-start';
 
       // Set flex-direction to row-reverse for progress-buttons
       progressButtons.style.flexDirection = 'row-reverse';
@@ -140,4 +105,35 @@ document.addEventListener('DOMContentLoaded', function () {
     nextBucket.style.backgroundColor = nextBucketColor;
     nextBucket.style.color = nextBucketTextColor;
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.querySelector('#progress-bar');
+    const progressText = progressBar.querySelector('span');
+
+    function adjustProgressBarAlignment() {
+        const progressBarWidth = progressBar.offsetWidth;
+        const spanWidth = progressText.offsetWidth;
+
+        console.log("progressBarWidth " + progressBarWidth);
+
+        if (progressBarWidth > spanWidth) {
+            progressBar.style.justifyContent = 'flex-end';
+        } else {
+            progressBar.style.justifyContent = 'flex-start';
+        }
+    }
+
+    // Запуск при загрузке страницы
+    adjustProgressBarAlignment();
+
+    // Обновление при изменении ширины прогресс бара
+    window.addEventListener('resize', adjustProgressBarAlignment);
+
+    // Пример для изменения ширины прогресс бара в зависимости от слайдера
+    const progressSlider = document.getElementById('progress-slider');
+    progressSlider.addEventListener('input', function() {
+        progressBar.style.width = `${progressSlider.value}%`;
+        adjustProgressBarAlignment();
+    });
+  });
 });

@@ -126,7 +126,8 @@ body {
 }
 
 .progress-bar span {
-	padding: 12px;
+	padding-left: 12px;
+	padding-right: 8px;
 	white-space: nowrap;
 	color: var(--step-1);
 }
