@@ -104,7 +104,7 @@ body {
 }
 
 .block:first-child {
-	background: var(--day-background-base);
+	background: var(--step-1-alfa);
 }
 
 .block:last-child {
