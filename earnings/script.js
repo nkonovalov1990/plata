@@ -85,31 +85,3 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const progressBar = document.querySelector('.progress-bar');
-  const progressText = progressBar.querySelector('span');
-
-  function adjustProgressBarAlignment() {
-      const progressBarWidth = progressBar.offsetWidth;
-      const spanWidth = progressText.offsetWidth;
-
-      if (progressBarWidth > spanWidth) {
-          progressBar.style.justifyContent = 'flex-end';
-      } else {
-          progressBar.style.justifyContent = 'flex-start';
-      }
-  }
-
-  // Запуск при загрузке страницы
-  adjustProgressBarAlignment();
-
-  // Обновление при изменении ширины прогресс бара
-  window.addEventListener('resize', adjustProgressBarAlignment);
-
-  // Пример для изменения ширины прогресс бара в зависимости от слайдера
-  const progressSlider = document.getElementById('progress-slider');
-  progressSlider.addEventListener('input', function() {
-      progressBar.style.width = `${progressSlider.value}%`;
-      adjustProgressBarAlignment();
-  });
-});
