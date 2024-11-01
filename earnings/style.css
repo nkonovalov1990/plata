@@ -1,0 +1,142 @@
+
+:root {
+	--day-background-base: #F5F6F9;
+	--neutral-bg: #F5F6FA;	
+	--primary: rgba(0, 0, 0, 0.8);
+	--secondary: rgba(8, 20, 51, 0.44);
+	--secondary-alpha: rgba(8, 20, 51, 0);
+	--neutral-80: rgba(23, 68, 153, 0.07);
+	--neutral-80-alpha: rgba(23, 68, 153, 0);
+	--neutral-100: rgba(19, 55, 128, 0.12);
+	--neutral-100-alpha: rgba(19, 55, 128, 0);
+	--neutral-120: rgba(15, 43, 102, 0.22);
+	--neutral-120-alpha: rgba(15, 43, 102, 0);
+	--step-1: rgba(36, 1, 254, 1);
+	--step-1-alfa: rgba(36, 1, 254, .1);
+	--step-2: rgba(218, 0, 180, 1);
+	--step-2-alfa: rgba(218, 0, 180, .1);
+	--step-3: rgba(255, 0, 107, 1);
+	--step-3-alfa: rgba(255, 0, 107, .1);
+	--step-4: rgba(255, 93, 21, 1);
+	--step-4-alfa: rgba(255, 93, 21, .1);
+	--step-5: rgba(0, 179, 114, 1);
+	--step-5-alfa: rgba(0, 179, 114, .1);
+	--step-6: rgba(0, 158, 220, 1);
+	--step-6-alfa: rgba(0, 158, 220, .1);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+	font-family: 'Roboto', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+	:root {
+		font-family: 'Roboto', sans-serif;
+	}
+}
+
+body {
+	height: 100dvh;
+	user-select: none;
+	background: var(--day-background-base);
+	color: var(--primary);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 13px;
+	line-height: 16px;
+	gap: 40px;
+}
+
+
+.card {
+	background-color: white;
+	border-radius: 12px;
+	padding: 22px 20px;
+	max-width: 280px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 20px;
+}
+
+.subheader {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.progress-buttons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+	gap: 8px;
+}
+
+.block {
+	position: relative;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	padding: 8px 12px;
+	border-radius: 8px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.block:first-child {
+	background: var(--day-background-base);
+}
+
+.block:last-child {
+	background-color: var(--step-2-alfa);
+	color: var(--step-2);
+	justify-content: center;
+}
+
+.progress-bar {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	height: 36px;
+	width: 0px;
+	background-color: var(--step-1-alfa);
+	transition: all .1s;
+}
+
+.progress-bar span {
+	margin-left: 12px;
+	white-space: nowrap;
+	color: var(--step-1);
+}
+
+.slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#progress-slider {
+    width: 100%;
+    max-width: 280px;
+}
