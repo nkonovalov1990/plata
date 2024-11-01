@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const spanWidth = progressText.offsetWidth;
 
         if (progressBarWidth > spanWidth) {
-          progressBar.style.justifyContent = 'flex-end';
+          // progressBar.style.justifyContent = 'flex-end';
         } else {
-          progressBar.style.justifyContent = 'flex-start';
+          // progressBar.style.justifyContent = 'flex-start';
         }
     }
 
@@ -143,3 +143,4 @@ document.addEventListener('DOMContentLoaded', function () {
     progressBarContainer.style.backgroundColor = progressBarContainerColor;
   }
 });
+
