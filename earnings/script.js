@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let nextBucketColor = '';
     let nextBucketTextColor = '';
 
-    if (value <= 53) {
+    if (value < 53) {
       progressWidth = (value / 53) * 100;
       progressColor = 'var(--step-1-alfa)';
       progressTextColor = 'var(--step-1)';
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-2)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 53%';
-    } else if (value <= 56) {
+    } else if (value < 56) {
       progressWidth = ((value - 53) / 3) * 100;
       progressColor = 'var(--step-2-alfa)';
       progressTextColor = 'var(--step-2)';
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-3)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 56%';
-    } else if (value <= 68) {
+    } else if (value < 68) {
       progressWidth = ((value - 56) / 12) * 100;
       progressColor = 'var(--step-3-alfa)';
       progressTextColor = 'var(--step-3)';
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-4)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 68%';
-    } else if (value <= 75) {
+    } else if (value < 75) {
       progressWidth = ((value - 68) / 7) * 100;
       progressColor = 'var(--step-4-alfa)';
       progressTextColor = 'var(--step-4)';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBucketTextColor = 'var(--step-5)';
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 75%';
-    } else if (value <= 83) {
+    } else if (value < 83) {
       progressWidth = ((value - 75) / 8) * 100;
       progressColor = 'var(--step-5-alfa)';
       progressTextColor = 'var(--step-5)';
