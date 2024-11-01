@@ -19,39 +19,11 @@ window.addEventListener('scroll', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const progressBar = document.querySelector('#progress-bar');
-    const progressText = progressBar.querySelector('span');
-
-    function adjustProgressBarAlignment() {
-        const progressBarWidth = progressBar.offsetWidth;
-        const spanWidth = progressText.offsetWidth;
-
-        if (progressBarWidth > spanWidth) {
-          // progressBar.style.justifyContent = 'flex-end';
-        } else {
-          // progressBar.style.justifyContent = 'flex-start';
-        }
-    }
-
-    // Запуск при загрузке страницы
-    adjustProgressBarAlignment();
-
-    // Обновление при изменении ширины прогресс бара
-    window.addEventListener('resize', adjustProgressBarAlignment);
-
-    // Пример для изменения ширины прогресс бара в зависимости от слайдера
-    const progressSlider = document.getElementById('progress-slider');
-    progressSlider.addEventListener('input', function() {
-        progressBar.style.width = `${progressSlider.value}%`;
-        adjustProgressBarAlignment();
-    });
-});
-
 // Дополнительный код для изменения ширины прогресс бара
 document.getElementById("progress-slider").addEventListener("input", function () {
   const progressBar = document.getElementById("progress-bar");
   const sliderValue = this.value;
+
   progressBar.style.width = sliderValue + "%";
   progressBar.querySelector("span").textContent = "CR " + sliderValue + "%";
 });
@@ -62,11 +34,26 @@ document.addEventListener('DOMContentLoaded', function () {
   const nextBucket = document.getElementById('next-bucket');
   const progressButtons = document.querySelector('.progress-buttons');
   const progressBarContainer = document.getElementById('progress-bar-container');
+  const progressText = progressBar.querySelector('span');
 
   progressSlider.addEventListener('input', function () {
     const value = parseInt(progressSlider.value);
     updateProgressBar(value);
+    updateSpan();
   });
+
+  function updateSpan() {
+    let progressBarWidth = progressBar.offsetWidth;
+    let progressBarWidthPercent = parseFloat(progressBar.style.width);
+    console.log("progressBarWidth " + progressBarWidth);
+    console.log("progressBarWidthPercent " + progressBarWidthPercent);
+    let spanWidth = progressText.offsetWidth;
+      if (progressBarWidth > spanWidth && progressBarWidthPercent > 25) {
+        progressBar.style.justifyContent = 'flex-end';
+      } else {
+        progressBar.style.justifyContent = 'flex-start';
+      }
+  }
 
   function updateProgressBar(value) {
     let progressWidth = 0;
@@ -102,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
       progressButtons.style.flexDirection = 'row';
       nextBucket.textContent = 'Próximo cubo 68%';
       progressBarContainerColor =  'var(--step-3-alfa)';
+      progressBar.style.justifyContent = 'flex-start';
     } else if (value < 75) {
       progressWidth = ((value - 67) / 8) * 100;
       progressColor = 'var(--step-4-alfa)';
@@ -133,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Update next-bucket text
       nextBucket.textContent = 'Cubo anterior 83%';
-    }
+    } 
 
     progressBar.style.width = `${progressWidth}%`;
     progressBar.style.backgroundColor = progressColor;
@@ -143,4 +131,3 @@ document.addEventListener('DOMContentLoaded', function () {
     progressBarContainer.style.backgroundColor = progressBarContainerColor;
   }
 });
-
