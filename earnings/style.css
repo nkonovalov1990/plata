@@ -122,10 +122,11 @@ body {
 	width: 0px;
 	background-color: var(--step-1-alfa);
 	transition: all .1s;
+	justify-content: flex-start;
 }
 
 .progress-bar span {
-	margin-left: 12px;
+	padding: 12px;
 	white-space: nowrap;
 	color: var(--step-1);
 }
