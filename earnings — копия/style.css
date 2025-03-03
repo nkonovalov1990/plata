@@ -57,10 +57,9 @@ body {
 .card {
 	background-color: white;
 	border-radius: 12px;
-	padding-top: 22px;
-	padding-bottom: 22px;
-	min-width: 320px;
-	width: 320px;
+	padding: 22px 20px;
+	max-width: 280px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 6px;
@@ -73,65 +72,61 @@ body {
 	font-style: normal;
 	font-weight: 700;
 	line-height: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
 }
 
 .subheader {
 	font-size: 12px;
 	line-height: 16px;
-	padding-left: 20px;
-	padding-right: 20px;
 }
 
 .progress-buttons {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	margin-top: 10px;
-	padding: 0px 20px;
+	gap: 8px;
 }
 
 .block {
-	/* width: 50%; */
-	/* margin-right: 12px; */
-	/* float: left; */
-	/* display: inline-block; */
+	position: relative;
+	height: 20px;
 	display: flex;
-	/* flex-grow: 1; */
-    flex-shrink: 1;
-    flex-basis: 1;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
-	position: relative;
+	flex: 1;
+	padding: 8px 12px;
 	border-radius: 8px;
+	text-align: center;
 	font-size: 12px;
 	font-weight: 600;
-	line-height: 16px;	
-	height: 20px;
-	padding: 8px 0px;
+	line-height: 16px;
 	overflow: hidden;
-	white-space: nowrap;
 }
 
-.progress-bar-block {
-	justify-content: flex-start;
-	padding: 0;
-	height: 36px;
-	min-width: fit-content;
+.block:first-child {
+	background: var(--step-1-alfa);
+}
+
+.block:last-child {
+	background-color: var(--step-2-alfa);
+	color: var(--step-2);
+	justify-content: center;
 }
 
 .progress-bar {
 	display: flex;
 	align-items: center;
-	height: 100%;
+	position: absolute;
+	left: 0;
+	height: 36px;
 	width: 0px;
-	transition: width 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	background-color: var(--step-1-alfa);
+	transition: all .1s;
+	justify-content: flex-start;
 }
 
 .progress-bar span {
 	padding-left: 12px;
-	padding-right: 12px;
+	padding-right: 8px;
 	white-space: nowrap;
 	color: var(--step-1);
 }
@@ -145,11 +140,6 @@ body {
 #progress-slider {
     width: 100%;
     max-width: 280px;
-}
-
-.next-bucket, .previous-bucket {
-	padding-left: 12px;
-	padding-right: 12px;
 }
 
 .display-none {

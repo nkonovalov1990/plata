@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link href="roboto.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
+        <link href="animation.css" rel="stylesheet">
     </head>
     <body>
         <div class="card">
@@ -16,18 +17,51 @@
             </div>
             <div class="subheader">Starting from October 1</div>
             <div class="progress-buttons">
-                <div class="block" id="progress-bar-container">
-                    <div class="progress-bar" id="progress-bar">
+
+                <div id="a" class="block progress-bar-block" style="order: 1; background: var(--step-1-alfa)">
+                    <div class="progress-bar" style="background-color: var(--step-1-alfa);">
                         <span>CR 0%</span>
                     </div>
+                    <div class="next-bucket display-none">
+                        <span>Próximo cubo 53%</span>
+                    </div>
+                    <div class="previous-bucket display-none">
+                        <span>Cubo anterior 83%</span>
+                    </div>
                 </div>
-                <div class="block next-bucket" id="next-bucket">
-                    Próximo cubo 53%
+
+                <div id="b" class="block" style="order: 2; background: var(--step-2-alfa)">
+                    <div class="progress-bar display-none" style="background-color: var(--step-2-alfa);">
+                        <span>CR 53%</span>
+                    </div>
+                    <div class="next-bucket" style="color: var(--step-2);">
+                        <span>Próximo cubo 53%</span>
+                    </div>
+                    <div class="previous-bucket display-none">
+                        <span>Cubo anterior 83%</span>
+                    </div>
                 </div>
+
+                <div id="c" class="block display-none" style="order: 2; background: var(--step-3-alfa)">
+                    <div class="progress-bar display-none" style="background-color: var(--step-1-alfa);">
+                        <span>CR 0%</span>
+                    </div>
+                    <div class="next-bucket" style="color: var(--step-3);">
+                        <span>Próximo cubo 53%</span>
+                    </div>
+                    <div class="previous-bucket display-none">
+                        <span>Cubo anterior 83%</span>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="slider-container">
+        <!-- <div class="slider-container">
             <input type="range" min="0" max="99" value="00" id="progress-slider">
+        </div> -->
+        <div class="button-container">
+            <!-- <button id="prev-level-button">Previous bucket</button> -->
+            <button id="next-level-button">Next bucket</button>
         </div>
     </body>
     <script src="script.js" type="text/javascript"></script>

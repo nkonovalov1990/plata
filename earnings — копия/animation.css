@@ -1,0 +1,9 @@
+#progress-bar-container.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#next-bucket.expand {
+    flex-grow: 1;
+    transition: flex-grow 0.5s ease;
+}
