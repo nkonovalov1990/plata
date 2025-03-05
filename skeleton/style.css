@@ -217,11 +217,11 @@ body {
 .product-widget {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: 320px;
 	border-radius: 8px;
 	border: 1px solid var(--tertiary);
 	overflow: hidden;
-	transition: height 1000ms;
+	transition: height 1000ms ease-in-out;
 }
 
 .product-widget-header {
@@ -232,12 +232,17 @@ body {
 	justify-content: space-between;
 	padding: 12px 16px;
 	border-top: 1px solid var(--tertiary);
+	cursor: pointer;
 	transition: background-color 50ms;
 }
 
 .product-widget-header:hover {
 	background-color: var(--neutral-80);
-	cursor: pointer;
+	transition: background-color 50ms;
+}
+
+.product-widget-header:active {
+	background-color: var(--neutral-120);
 	transition: background-color 50ms;
 }
 
@@ -401,8 +406,4 @@ body {
 
 .text {
 	min-height: 16px;
-}
-
-.panel {
-	width: 320px;
 }

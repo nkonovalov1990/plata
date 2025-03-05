@@ -34,6 +34,8 @@ function initPanelSkeletons(panel) {
 // Функция анимации скелетонов
 function animateSkeletons(panel) {
   const skeletons = panel.querySelectorAll('.skeleton');
+  let completedAnimations = 0;
+
   skeletons.forEach(skeleton => {
     // Анимация исчезновения
     skeleton.animate([
@@ -50,6 +52,29 @@ function animateSkeletons(panel) {
       skeleton.classList.remove('skeleton-fill', 'skeleton');
       skeleton.style.width = 'auto';
       skeleton.style.height = 'auto';
+      
+      completedAnimations++;
+      
+      // Если это последний скелетон, показываем Cash Loan секцию
+      if (completedAnimations === skeletons.length && panel.id === 'products-list') {
+        setTimeout(() => {
+          showCashLoanProductWidgetHeader();
+          
+          // Находим все SVG в headers и анимируем их
+          const arrows = panel.querySelectorAll('.product-widget-header svg');
+          arrows.forEach(svg => {
+            svg.style.opacity = '0'; // Начальное состояние
+            svg.animate([
+              { opacity: 0 },
+              { opacity: 1 }
+            ], {
+              duration: 100,
+              fill: 'forwards',
+              easing: 'ease-in-out',
+            });
+          });
+        }, 500);
+      }
     }, 300);
 
     // Анимация появления контента

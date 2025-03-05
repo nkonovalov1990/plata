@@ -2,8 +2,8 @@ function HideProductsList(){
     let productsList = document.getElementById('products-list');
 
     let productsListAnimation = productsList.animate([
-        { opacity: 1},
-        { opacity: 0, marginLeft: '-20px' }
+        { opacity: 1, transform: 'translateX(0px)' },
+        { opacity: 0, transform: 'translateX(-20px)' }
     ], {
         duration: 100,
         fill: 'forwards',
@@ -35,8 +35,8 @@ function DeepIntoCreditAccount() {
             }
             panel.style.display = "flex";
             panel.animate([
-              { opacity: 0, marginLeft: '20px' },
-              { opacity: 1, marginLeft: '0px' }
+              { opacity: 0, transform: 'translateX(20px)' },
+              { opacity: 1, transform: 'translateX(0px)' }
             ], {
               duration: 100,
               fill: 'forwards',
@@ -63,8 +63,8 @@ function DeepIntoCashLoan() {
             }       
             panel.style.display = "flex";
             panel.animate([
-              { opacity: 0, marginLeft: '20px' },
-              { opacity: 1, marginLeft: '0px' }
+              { opacity: 0, transform: 'translateX(20px)' },
+              { opacity: 1, transform: 'translateX(0px)' }
             ], {
               duration: 100,
               fill: 'forwards',
@@ -80,8 +80,8 @@ function BackToProductsList(panelId) {
   if (currentPanel) {
     // Анимируем исчезновение текущей панели
     let hideAnimation = currentPanel.animate([
-      { opacity: 1, marginLeft: '0px' },
-      { opacity: 0, marginLeft: '20px' }
+      { opacity: 1, transform: 'translateX(0px)' },
+      { opacity: 0, transform: 'translateX(20px)' }
     ], {
       duration: 100,
       fill: 'forwards',
@@ -99,8 +99,8 @@ function BackToProductsList(panelId) {
             productsList.style.opacity = '0';
             
             productsList.animate([
-            { opacity: 0, marginLeft: '-20px' },
-            { opacity: 1, marginLeft: '0px' }
+            { opacity: 0, transform: 'translateX(-20px)' },
+            { opacity: 1, transform: 'translateX(0px)' }
             ], {
             duration: 100,
             fill: 'forwards',
@@ -110,3 +110,25 @@ function BackToProductsList(panelId) {
     };
   }
 }
+
+function showCashLoanProductWidgetHeader() {
+    let cashLoanSection = document.getElementById('personal-loan');
+    cashLoanSection.style.display = 'flex';
+    cashLoanSection.animate([
+      { opacity: 0 },
+      { opacity: 1 }
+    ], {
+      duration: 300,
+      fill: 'forwards',
+      easing: 'ease-in-out'
+    });
+    let productsList = document.getElementById('products-list');
+    productsList.animate([
+        { height: '40px' },
+        { height: '80px' }
+      ], {
+        duration: 100,
+        fill: 'forwards',
+        easing: 'ease-in-out'
+      });
+  }
