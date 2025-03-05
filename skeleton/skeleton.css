@@ -25,18 +25,18 @@
     }
 }
 
-.cards-container-height-change {
-	animation: cards 150ms ease-in-out;
+.products-list-container-height-change {
+	animation: cards 100ms ease-in-out;
 	animation-fill-mode: forwards;
 }
 
 @keyframes cards {
     0% {
 		opacity: 0;
-		height: 56px;
+		height: 48px;
     }
     100% {
 		opacity: 1;
-		height: 128px;
+		height: 99px;
     }
 }

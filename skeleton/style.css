@@ -88,6 +88,7 @@ h2 {
 	line-height: 20px;
 	margin: 0;
 	padding-left: 20px;
+	margin-bottom: 16px;
 }
 
 body {
@@ -110,6 +111,18 @@ body {
 
 .margin-top-20 {
 	margin-top: 20px;
+}
+
+.margin-left-20 {
+	margin-left: 20px;
+}
+
+.margin-right-20 {
+	margin-right: 20px;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px;
 }
 
 .pulse {
@@ -167,8 +180,8 @@ body {
 
 .fadeInUp {
 	animation-name: fadeInUp;
-	animation-delay: 100ms;
-	animation-duration: 100ms;
+	animation-delay: 200ms;
+	animation-duration: 200ms;
     animation-fill-mode: both;
 }
 
@@ -206,7 +219,7 @@ body {
 	flex-direction: column;
 	width: 100%;
 	border-radius: 8px;
-	border: 1px solid var(--neutral-120);
+	border: 1px solid var(--tertiary);
 	overflow: hidden;
 	transition: height 1000ms;
 }
@@ -224,7 +237,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	padding: 16px 16px;
-	border-bottom: 1px solid var(--neutral-120);
+	border-top: 1px solid var(--tertiary);
 	transition: background-color 50ms;
 }
 
@@ -314,7 +327,6 @@ body {
 .section {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
 	width: 100%;
 }
 
@@ -356,7 +368,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	width: 320px;
-	margin: 0 20px 0 20px;
 	box-sizing: border-box;
 }
 

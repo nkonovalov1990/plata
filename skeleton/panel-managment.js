@@ -35,7 +35,7 @@ function DeepIntoCreditAccount() {
             }
             panel.style.display = "flex";
             panel.animate([
-              { opacity: 0, marginLeft: '12px' },
+              { opacity: 0, marginLeft: '16px' },
               { opacity: 1, marginLeft: '0px' }
             ], {
               duration: 100,
@@ -63,7 +63,7 @@ function DeepIntoCashLoan() {
             }       
             panel.style.display = "flex";
             panel.animate([
-              { opacity: 0, marginLeft: '12px' },
+              { opacity: 0, marginLeft: '16px' },
               { opacity: 1, marginLeft: '0px' }
             ], {
               duration: 100,
@@ -81,7 +81,7 @@ function BackToProductsList(panelId) {
     // Анимируем исчезновение текущей панели
     let hideAnimation = currentPanel.animate([
       { opacity: 1, marginLeft: '0px' },
-      { opacity: 0, marginLeft: '8px' }
+      { opacity: 0, marginLeft: '16px' }
     ], {
       duration: 100,
       fill: 'forwards',
@@ -99,7 +99,7 @@ function BackToProductsList(panelId) {
             productsList.style.opacity = '0';
             
             productsList.animate([
-            { opacity: 0, marginLeft: '-8px' },
+            { opacity: 0, marginLeft: '-16px' },
             { opacity: 1, marginLeft: '0px' }
             ], {
             duration: 100,
