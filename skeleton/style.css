@@ -450,6 +450,8 @@ body {
 
 .left-panel {
 	position: fixed;
+	justify-content: center;
+	align-items: center;
 	z-index: 100;
 	left: 0;
 	display: flex;
@@ -464,6 +466,8 @@ body {
 
 .right-panel {
 	position: fixed;
+	justify-content: center;
+	align-items: center;
 	z-index: 100;
 	right: 0;
 	display: flex;
