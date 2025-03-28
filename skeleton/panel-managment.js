@@ -134,18 +134,20 @@ function showCashLoanProductWidgetHeader() {
 }
 
 function showLeftPanel() {
-  let panel = document.getElementById('left-panel');
-  if (panel) {
-      panel.style.display = "flex";
-      panel.animate([
-          { opacity: 0, transform: 'translateX(-20px)' },
-          { opacity: 1, transform: 'translateX(0px)' }
-      ], {
-          duration: 120,
-          fill: 'forwards',
-          easing: 'ease-in-out'
-      });
-  }
+  setTimeout(() => {
+    let panel = document.getElementById('left-panel');
+    if (panel) {
+        panel.style.display = "flex";
+        panel.animate([
+            { opacity: 0, transform: 'translateX(-20px)' },
+            { opacity: 1, transform: 'translateX(0px)' }
+        ], {
+            duration: 120,
+            fill: 'forwards',
+            easing: 'ease-in-out'
+        });
+    }  
+  }, 120);
 }
 
 function hideLeftPanel() {

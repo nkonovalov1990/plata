@@ -412,7 +412,6 @@ body {
 }
 
 .sidebar-summoner {
-	cursor: pointer;
 	position: fixed;
 	width: 56px;
 	height: 100vh;
@@ -437,6 +436,7 @@ body {
 }
 
 #right-sidebar-summoner {
+	cursor: pointer;
 	right: 0;
 	background: linear-gradient(to left, 
         rgba(245, 246, 249, 0) 0%,
