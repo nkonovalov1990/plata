@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 2000);
     }
   }, 1000);
+
+  // Removed sidebar animation logic
 });
 
 // Функция инициализации скелетонов для панели

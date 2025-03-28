@@ -174,8 +174,11 @@ body {
     max-width: 360px;
 	background-color: rgba(255, 255, 255, 0);
 	box-sizing: border-box;
-	box-shadow: 0px 3px 7px 0px rgba(32, 47, 78, 0.09);
 	opacity: 0;
+}
+
+.panel-shadow {
+	box-shadow: 0px 4px 8px 0px rgba(32, 47, 78, 0.09);
 }
 
 .fadeInUp {
@@ -233,17 +236,17 @@ body {
 	padding: 12px 16px;
 	border-top: 1px solid var(--tertiary);
 	cursor: pointer;
-	transition: background-color 50ms;
+	transition: background-color 60ms;
 }
 
 .product-widget-header:hover {
 	background-color: var(--neutral-80);
-	transition: background-color 50ms;
+	transition: background-color 60ms;
 }
 
 .product-widget-header:active {
 	background-color: var(--neutral-120);
-	transition: background-color 50ms;
+	transition: background-color 60ms;
 }
 
 .header {
@@ -273,12 +276,12 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 8px 20px;
-  transition: background-color 50ms;
+  transition: background-color 60ms;
 }
 
 .flex-row:hover {
 	background-color: var(--neutral-80) !important;
-	transition: background-color 50ms;
+	transition: background-color 60ms;
 }
 
 .flex-row.interactive:hover {
@@ -406,4 +409,69 @@ body {
 
 .text {
 	min-height: 16px;
+}
+
+.sidebar-summoner {
+	cursor: pointer;
+	position: fixed;
+	width: 56px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	box-sizing: border-box;
+}
+
+#left-sidebar-summoner {
+	left: 0;
+	background: linear-gradient(to right, 
+		rgba(245, 246, 249, 0) 0%,
+		rgba(245, 246, 249, 0) 25%,
+		rgba(23, 68, 153, 0.07) 50%,
+		rgba(15, 43, 102, 0.22) 100%
+	);
+	background-size: 400% 100%;
+}
+
+#right-sidebar-summoner {
+	right: 0;
+	background: linear-gradient(to left, 
+        rgba(245, 246, 249, 0) 0%,
+		rgba(245, 246, 249, 0) 25%,
+		rgba(23, 68, 153, 0.07) 50%,
+		rgba(15, 43, 102, 0.22) 100%
+    );
+	background-size: 400% 100%;
+	background-position-x: 100%
+}
+
+.left-panel {
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	display: flex;
+	padding: 0;
+	max-width: 360px;
+	width: 360px;
+	height: 100vh;
+	background-color: white;
+	box-sizing: border-box;
+	opacity: 0;
+}
+
+.right-panel {
+	position: fixed;
+	z-index: 100;
+	right: 0;
+	display: flex;
+	padding: 0;
+	max-width: 620px;
+	width: 620px;
+	height: 100vh;
+	background-color: white;
+	box-sizing: border-box;
+	opacity: 0;
 }

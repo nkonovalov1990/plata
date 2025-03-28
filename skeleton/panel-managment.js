@@ -5,7 +5,7 @@ function HideProductsList(){
         { opacity: 1, transform: 'translateX(0px)' },
         { opacity: 0, transform: 'translateX(-20px)' }
     ], {
-        duration: 100,
+        duration: 120,
         fill: 'forwards',
         easing: 'ease-in-out'
     });
@@ -38,7 +38,7 @@ function DeepIntoCreditAccount() {
               { opacity: 0, transform: 'translateX(20px)' },
               { opacity: 1, transform: 'translateX(0px)' }
             ], {
-              duration: 100,
+              duration: 120,
               fill: 'forwards',
               easing: 'ease-in-out'
             });
@@ -66,7 +66,7 @@ function DeepIntoCashLoan() {
               { opacity: 0, transform: 'translateX(20px)' },
               { opacity: 1, transform: 'translateX(0px)' }
             ], {
-              duration: 100,
+              duration: 120,
               fill: 'forwards',
               easing: 'ease-in-out'
             });
@@ -83,7 +83,7 @@ function BackToProductsList(panelId) {
       { opacity: 1, transform: 'translateX(0px)' },
       { opacity: 0, transform: 'translateX(20px)' }
     ], {
-      duration: 100,
+      duration: 120,
       fill: 'forwards',
       easing: 'ease-in-out'
     });
@@ -102,7 +102,7 @@ function BackToProductsList(panelId) {
             { opacity: 0, transform: 'translateX(-20px)' },
             { opacity: 1, transform: 'translateX(0px)' }
             ], {
-            duration: 100,
+            duration: 120,
             fill: 'forwards',
             easing: 'ease-in-out'
             });
@@ -112,23 +112,91 @@ function BackToProductsList(panelId) {
 }
 
 function showCashLoanProductWidgetHeader() {
-    let cashLoanSection = document.getElementById('personal-loan');
-    cashLoanSection.style.display = 'flex';
-    cashLoanSection.animate([
-      { opacity: 0 },
-      { opacity: 1 }
+  let cashLoanSection = document.getElementById('personal-loan');
+  cashLoanSection.style.display = 'flex';
+  cashLoanSection.animate([
+    { opacity: 0 },
+    { opacity: 1 }
+  ], {
+    duration: 300,
+    fill: 'forwards',
+    easing: 'ease-in-out'
+  });
+  let productsList = document.getElementById('products-list');
+  productsList.animate([
+      { height: '40px' },
+      { height: '80px' }
     ], {
-      duration: 300,
+      duration: 120,
       fill: 'forwards',
       easing: 'ease-in-out'
     });
-    let productsList = document.getElementById('products-list');
-    productsList.animate([
-        { height: '40px' },
-        { height: '80px' }
+}
+
+function showLeftPanel() {
+  let panel = document.getElementById('left-panel');
+  if (panel) {
+      panel.style.display = "flex";
+      panel.animate([
+          { opacity: 0, transform: 'translateX(-20px)' },
+          { opacity: 1, transform: 'translateX(0px)' }
       ], {
-        duration: 100,
-        fill: 'forwards',
-        easing: 'ease-in-out'
+          duration: 120,
+          fill: 'forwards',
+          easing: 'ease-in-out'
       });
   }
+}
+
+function hideLeftPanel() {
+    let panel = document.getElementById('left-panel');
+    if (panel) {
+        const hideAnimation = panel.animate([
+            { opacity: 1, transform: 'translateX(0px)' },
+            { opacity: 0, transform: 'translateX(-20px)' }
+        ], {
+            duration: 120,
+            fill: 'forwards',
+            easing: 'ease-in-out'
+        });
+
+        // Hide panel after animation completes
+        hideAnimation.onfinish = () => {
+            panel.style.display = 'none';
+        };
+    }
+}
+
+function showRightPanel() {
+  let panel = document.getElementById('right-panel');
+  if (panel) {
+      panel.style.display = "flex";
+      panel.animate([
+          { opacity: 0, transform: 'translateX(40px)' },
+          { opacity: 1, transform: 'translateX(0px)' }
+      ], {
+          duration: 120,
+          fill: 'forwards',
+          easing: 'ease-in-out'
+      });
+  }
+}
+
+function hideRightPanel() {
+    let panel = document.getElementById('right-panel');
+    if (panel) {
+        const hideAnimation = panel.animate([
+            { opacity: 1, transform: 'translateX(0px)' },
+            { opacity: 0, transform: 'translateX(40px)' }
+        ], {
+            duration: 120,
+            fill: 'forwards',
+            easing: 'ease-in-out'
+        });
+
+        // Hide panel after animation completes
+        hideAnimation.onfinish = () => {
+            panel.style.display = 'none';
+        };
+    }
+}
