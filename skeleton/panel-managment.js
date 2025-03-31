@@ -240,11 +240,23 @@ function initializeToastNotifications() {
                 { height: '158px', opacity: 1, transform: 'translateY(0px)' }   // Конечное состояние
             ],
             {
-                duration: 120, // Длительность анимации
+                duration: 240, // Длительность анимации
                 fill: 'forwards', // Сохраняем конечное состояние
                 easing: 'ease-in-out' // Плавность анимации
             }
         );
+
+        toast1.animate(
+          [
+              { transform: 'translateY(0px)' }, // Начальное состояние
+              { transform: 'translateY(16px)' }   // Конечное состояние
+          ],
+          {
+              duration: 120, // Длительность анимации
+              fill: 'forwards', // Сохраняем конечное состояние
+              easing: 'ease-in-out' // Плавность анимации
+          }
+      );
 
     } else {
         console.error("Unexpected display value for toast1:", toast1Display);
