@@ -18,10 +18,11 @@
             </svg>                
         </div>
         <div class="left-panel panel-shadow" style="display: none;" id="left-panel" onmouseleave="hideLeftPanel()">
-            <span style="cursor: pointer;">&#10060;&thinsp;Close</span>
+            <span>Mouse leave to close</span>
         </div>
         <div class="main panel-shadow" style="display: none;" id="main">
             <div class="fixed360">
+                <div class="button" id="button-show-notification" onclick="initializeToastNotifications()">Show notification</div>
                 <div class="product-widget" id="products-list">
                     <div class="product-widget-header" style="border-top:none;" onclick="DeepIntoCreditAccount()">
                         <span class="text">Credit account</span>
@@ -38,6 +39,7 @@
                 </div>
 
                 <div class="product-details" id="credit-account-panel" style="display: none; opacity: 0;">
+                    
                     <div class="section">
                         <div class="btn btn-gray btn-40 margin-left-20 margin-bottom-20" onclick="BackToProductsList('credit-account-panel')">Back</div>
                         <h2>Credit account</h2>
@@ -100,6 +102,44 @@
             <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.58008 8.77538C3.58008 8.89657 3.62187 8.99895 3.70544 9.08253C3.78902 9.16192 3.89767 9.20162 4.03139 9.20162H7.57292L5.705 14.2789C5.64231 14.4418 5.62978 14.5818 5.66739 14.6988C5.70918 14.8158 5.77813 14.8994 5.87424 14.9496C5.97453 15.0039 6.08527 15.0143 6.20645 14.9809C6.33182 14.9516 6.44673 14.8722 6.5512 14.7427L12.249 7.62204C12.3576 7.48414 12.412 7.35041 12.412 7.22087C12.412 7.09969 12.3702 6.99939 12.2866 6.92C12.203 6.83642 12.0944 6.79463 11.9607 6.79463H8.41912L10.287 1.7174C10.3497 1.5586 10.3602 1.4207 10.3184 1.30369C10.2808 1.18669 10.2118 1.10311 10.1115 1.05297C10.0154 0.998642 9.90469 0.986105 9.77932 1.01536C9.65814 1.04461 9.54531 1.1261 9.44084 1.25982L3.74305 8.37422C3.6344 8.5163 3.58008 8.65002 3.58008 8.77538Z"  fill="#081433" fill-opacity="0.53"/>
             </svg>            
+        </div>
+        <div class="toasts-container">
+            <div class="toast" id="toast-2" style="height: 0px;">
+                <div class="toast-color-indicator"></div>
+                <div class="toast-content">
+                    <div class="toast-message">
+                        <span class="task-id font-weight-600">Task ID</span>
+                        <span>14a28eaa-c96d-4615-b52b-677b3c663c85</span>
+                    </div>
+                    <div class="toast-message">
+                        <span class="font-weight-600">Server message:</span>
+                        <span>types.UUIDFromProto: parse proto uuid: invalid UUID length: 0 invalid argument</span>
+                    </div>
+                    <div class="toast-message">
+                        <span class="font-weight-600">Front message:</span>
+                        <span>[GET_CHAT] internal error</span>
+                    </div>
+                </div>
+                <div class="toast-close-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.1886 4.94271C12.501 4.63029 12.501 4.12376 12.1886 3.81134C11.8762 3.49892 11.3696 3.49892 11.0572 3.81134L7.99997 6.86857L4.9428 3.81141C4.63038 3.49899 4.12385 3.49899 3.81143 3.81141C3.49901 4.12383 3.49901 4.63036 3.81143 4.94278L6.8686 7.99994L3.81143 11.0571C3.49901 11.3695 3.49901 11.8761 3.81143 12.1885C4.12385 12.5009 4.63038 12.5009 4.9428 12.1885L7.99997 9.13132L11.0572 12.1885C11.3696 12.501 11.8762 12.501 12.1886 12.1885C12.501 11.8761 12.501 11.3696 12.1886 11.0572L9.13134 7.99994L12.1886 4.94271Z" fill="white"/>
+                    </svg>  
+                </div>
+            </div>
+            <div class="toast" id="toast-1">
+                <div class="toast-color-indicator"></div>
+                <div class="toast-content">
+                    <div class="toast-message">
+                        <span class="task-id font-weight-600">Task ID</span>
+                        <span>14a28eaa-c96d-4615-b52b</span>
+                    </div>
+                </div>
+                <div class="toast-close-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.1886 4.94271C12.501 4.63029 12.501 4.12376 12.1886 3.81134C11.8762 3.49892 11.3696 3.49892 11.0572 3.81134L7.99997 6.86857L4.9428 3.81141C4.63038 3.49899 4.12385 3.49899 3.81143 3.81141C3.49901 4.12383 3.49901 4.63036 3.81143 4.94278L6.8686 7.99994L3.81143 11.0571C3.49901 11.3695 3.49901 11.8761 3.81143 12.1885C4.12385 12.5009 4.63038 12.5009 4.9428 12.1885L7.99997 9.13132L11.0572 12.1885C11.3696 12.501 11.8762 12.501 12.1886 12.1885C12.501 11.8761 12.501 11.3696 12.1886 11.0572L9.13134 7.99994L12.1886 4.94271Z" fill="white"/>
+                    </svg>                        
+                </div>
+            </div>
         </div>
     <script src="script.js" type="text/javascript"></script>
     <script src="panel-managment.js" type="text/javascript"></script>

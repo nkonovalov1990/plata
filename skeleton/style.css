@@ -101,6 +101,10 @@ body {
 	line-height: 16px;
 }
 
+.font-weight-600 {
+    font-weight: 600;
+}
+
 .text-align-right {
 	text-align: right;
 }
@@ -123,6 +127,28 @@ body {
 
 .margin-bottom-20 {
 	margin-bottom: 20px;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 320px;
+	height: 40px;
+	border-radius: 8px;
+	background-color: var(--neutral-100);
+	color: var(--primary);
+	text-align: center;
+	font-weight: 600;
+}
+.button:hover {
+	background-color: var(--neutral-80);
+	transition: background-color 60ms;
+}
+
+.button:active {
+	background-color: var(--neutral-120);
+	transition: background-color 60ms;
 }
 
 .pulse {
@@ -198,6 +224,7 @@ body {
 	align-items: center;
 	box-sizing: border-box;
 	padding-top: 20px;
+	gap: 20px;
 }
 
 .chat-column {
@@ -478,4 +505,70 @@ body {
 	background-color: white;
 	box-sizing: border-box;
 	opacity: 0;
+}
+
+.toasts-container {
+	position: fixed;
+	top: 16px;
+	right: 20px;
+	z-index: 200;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 360px;
+}
+
+.toast {
+	display: none;
+	align-items: stretch;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 8px;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.toast-color-indicator {
+	width: 4px;
+	background-color: #FF5252;
+	border-radius: 4px;
+	margin: 8px;
+	flex-shrink: 0;
+}
+
+.toast-close-button {
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+	font-size: 24px;
+	font-weight: 200;
+    cursor: pointer;
+	position: relative;
+	top: 4px;
+	right: 4px;
+	border-radius: 4px;
+	transition: background-color 60ms;
+}
+
+.toast-close-button:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: background-color 60ms;
+}
+
+.toast-content {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 12px 12px 12px 4px;
+	width: 100%;
+}
+
+.toast-message {
+    display: flex;
+	flex-direction: column;
+	gap: 2px;
+	width: 100%;
 }

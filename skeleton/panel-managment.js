@@ -202,3 +202,56 @@ function hideRightPanel() {
         };
     }
 }
+
+function initializeToastNotifications() {
+  console.log("Initializing toast notifications");
+  const button = document.getElementById("button-show-notification");
+  const toast1 = document.getElementById("toast-1");
+  const toast2 = document.getElementById("toast-2");
+
+  button.addEventListener("click", () => {
+    // Проверяем текущее состояние toast1
+    const toast1Display = window.getComputedStyle(toast1).display;
+
+    if (toast1Display === "none") {
+        // Если toast1 скрыт (display: none), показываем его
+        console.log("Showing toast-1");
+        toast1.style.display = "flex"; // Делаем элемент видимым
+        toast1.animate(
+            [
+                { opacity: 0, transform: 'translateY(-20px)' }, // Начальное состояние
+                { opacity: 1, transform: 'translateY(0px)' }   // Конечное состояние
+            ],
+            {
+                duration: 120, // Длительность анимации
+                fill: 'forwards', // Сохраняем конечное состояние
+                easing: 'ease-in-out' // Плавность анимации
+            }
+        );
+    } else if (toast1Display === "flex") {
+        // Если toast1 уже видим (display: flex), показываем toast2 и перемещаем toast1
+        console.log("Showing toast-2 and moving toast-1");
+
+        // Показываем toast2
+        toast2.style.display = "flex"; // Устанавливаем display: flex
+        toast2.animate(
+            [
+                { height: '0px', opacity: 0, transform: 'translateY(-20px)' }, // Начальное состояние
+                { height: '158px', opacity: 1, transform: 'translateY(0px)' }   // Конечное состояние
+            ],
+            {
+                duration: 120, // Длительность анимации
+                fill: 'forwards', // Сохраняем конечное состояние
+                easing: 'ease-in-out' // Плавность анимации
+            }
+        );
+
+    } else {
+        console.error("Unexpected display value for toast1:", toast1Display);
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initializeToastNotifications(); // Регистрируем обработчик события при загрузке страницы
+});
