@@ -5,7 +5,7 @@ function HideProductsList(){
         { opacity: 1, transform: 'translateX(0px)' },
         { opacity: 0, transform: 'translateX(-20px)' }
     ], {
-        duration: 120,
+        duration: 133,
         fill: 'forwards',
         easing: 'ease-in-out'
     });
@@ -38,7 +38,7 @@ function DeepIntoCreditAccount() {
               { opacity: 0, transform: 'translateX(20px)' },
               { opacity: 1, transform: 'translateX(0px)' }
             ], {
-              duration: 120,
+              duration: 133,
               fill: 'forwards',
               easing: 'ease-in-out'
             });
@@ -66,7 +66,7 @@ function DeepIntoCashLoan() {
               { opacity: 0, transform: 'translateX(20px)' },
               { opacity: 1, transform: 'translateX(0px)' }
             ], {
-              duration: 120,
+              duration: 133,
               fill: 'forwards',
               easing: 'ease-in-out'
             });
@@ -83,7 +83,7 @@ function BackToProductsList(panelId) {
       { opacity: 1, transform: 'translateX(0px)' },
       { opacity: 0, transform: 'translateX(20px)' }
     ], {
-      duration: 120,
+      duration: 133,
       fill: 'forwards',
       easing: 'ease-in-out'
     });
@@ -102,7 +102,7 @@ function BackToProductsList(panelId) {
             { opacity: 0, transform: 'translateX(-20px)' },
             { opacity: 1, transform: 'translateX(0px)' }
             ], {
-            duration: 120,
+            duration: 133,
             fill: 'forwards',
             easing: 'ease-in-out'
             });
@@ -127,7 +127,7 @@ function showCashLoanProductWidgetHeader() {
       { height: '40px' },
       { height: '80px' }
     ], {
-      duration: 120,
+      duration: 133,
       fill: 'forwards',
       easing: 'ease-in-out'
     });
@@ -142,12 +142,12 @@ function showLeftPanel() {
             { opacity: 0, transform: 'translateX(-20px)' },
             { opacity: 1, transform: 'translateX(0px)' }
         ], {
-            duration: 120,
+            duration: 133,
             fill: 'forwards',
             easing: 'ease-in-out'
         });
     }  
-  }, 120);
+  }, 133);
 }
 
 function hideLeftPanel() {
@@ -157,7 +157,7 @@ function hideLeftPanel() {
             { opacity: 1, transform: 'translateX(0px)' },
             { opacity: 0, transform: 'translateX(-20px)' }
         ], {
-            duration: 120,
+            duration: 133,
             fill: 'forwards',
             easing: 'ease-in-out'
         });
@@ -177,7 +177,7 @@ function showRightPanel() {
           { opacity: 0, transform: 'translateX(40px)' },
           { opacity: 1, transform: 'translateX(0px)' }
       ], {
-          duration: 120,
+          duration: 133,
           fill: 'forwards',
           easing: 'ease-in-out'
       });
@@ -191,7 +191,7 @@ function hideRightPanel() {
             { opacity: 1, transform: 'translateX(0px)' },
             { opacity: 0, transform: 'translateX(40px)' }
         ], {
-            duration: 120,
+            duration: 133,
             fill: 'forwards',
             easing: 'ease-in-out'
         });
@@ -203,67 +203,184 @@ function hideRightPanel() {
     }
 }
 
-function initializeToastNotifications() {
-  console.log("Initializing toast notifications");
-  const button = document.getElementById("button-show-notification");
-  const toast1 = document.getElementById("toast-1");
-  const toast2 = document.getElementById("toast-2");
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonShowNotification = document.getElementById('button-show-notification');
 
-  button.addEventListener("click", () => {
-    // Проверяем текущее состояние toast1
-    const toast1Display = window.getComputedStyle(toast1).display;
+  const toast1 = document.getElementById('toast-1');
+  const toast1parent = toast1.parentElement;
+  const toast1Height = toast1.offsetHeight;
+  console.log(`toast-1: ${toast1Height}px`);
 
-    if (toast1Display === "none") {
-        // Если toast1 скрыт (display: none), показываем его
-        console.log("Showing toast-1");
-        toast1.style.display = "flex"; // Делаем элемент видимым
-        toast1.animate(
-            [
-                { opacity: 0, transform: 'translateY(-20px)' }, // Начальное состояние
-                { opacity: 1, transform: 'translateY(0px)' }   // Конечное состояние
-            ],
-            {
-                duration: 120, // Длительность анимации
-                fill: 'forwards', // Сохраняем конечное состояние
-                easing: 'ease-in-out' // Плавность анимации
-            }
-        );
-    } else if (toast1Display === "flex") {
-        // Если toast1 уже видим (display: flex), показываем toast2 и перемещаем toast1
-        console.log("Showing toast-2 and moving toast-1");
+  const toast2 = document.getElementById('toast-2');
+  const toast2parent = toast2.parentElement;
+  const toast2Height = toast2.offsetHeight;
+  console.log(`toast-2: ${toast2Height}px`);
 
-        // Показываем toast2
-        toast2.style.display = "flex"; // Устанавливаем display: flex
-        toast2.animate(
-            [
-                { height: '0px', opacity: 0, transform: 'translateY(-20px)' }, // Начальное состояние
-                { height: '158px', opacity: 1, transform: 'translateY(0px)' }   // Конечное состояние
-            ],
-            {
-                duration: 240, // Длительность анимации
-                fill: 'forwards', // Сохраняем конечное состояние
-                easing: 'ease-in-out' // Плавность анимации
-            }
-        );
+  buttonShowNotification.addEventListener('click', () => {
 
-        toast1.animate(
-          [
-              { transform: 'translateY(0px)' }, // Начальное состояние
-              { transform: 'translateY(16px)' }   // Конечное состояние
-          ],
-          {
-              duration: 120, // Длительность анимации
-              fill: 'forwards', // Сохраняем конечное состояние
-              easing: 'ease-in-out' // Плавность анимации
-          }
+    if (window.getComputedStyle(toast1).visibility === 'hidden') {
+      
+      toast1parent.animate(
+        [
+          { height: '0px' },
+          { height: `${toast1Height}px` }
+        ],
+        {
+          duration: 133,
+          fill: 'forwards',
+          easing: 'ease-in-out'
+        }
       );
-
-    } else {
-        console.error("Unexpected display value for toast1:", toast1Display);
+    
+      toast1parent.animate(
+        [
+          { transform: 'translateY(-16px)' },
+          { transform: 'translateY(0px)' }
+        ],
+        {
+          delay: 133,
+          duration: 133,
+          fill: 'forwards',
+          easing: 'ease-in-out'
+        }
+      );
+    
+      toast1.style.visibility = 'visible';
+    
+      toast1.animate(
+        [
+          { opacity: 0 },
+          { opacity: 1 }
+        ],
+        {
+          delay: 133,
+          duration: 133,
+          fill: 'forwards',
+          easing: 'ease-in-out'
+        }
+      );
+      
     }
+    else if (window.getComputedStyle(toast1).visibility === 'visible' && window.getComputedStyle(toast2).visibility == 'hidden') {
+      
+      toast2parent.animate(
+        [
+          { height: '0px' },
+          { height: `${toast2Height +16}px` }
+        ],
+        {
+          duration: 133,
+          fill: 'forwards',
+          easing: 'ease-in-out'
+        }
+      );
+    
+      toast2parent.animate(
+        [
+          { transform: 'translateY(-16px)' },
+          { transform: 'translateY(0px)' }
+        ],
+        {
+          delay: 133,
+          duration: 133,
+          fill: 'forwards',
+          easing: 'ease-in-out'
+        }
+      );
+    
+      toast2.style.visibility = 'visible';
+    
+      toast2.animate(
+        [
+          { opacity: 0 },
+          { opacity: 1 }
+        ],
+        {
+          delay: 133,
+          duration: 133,
+          fill: 'forwards',
+          easing: 'ease-in-out'
+        }
+      );
+    }
+
   });
+
+});
+
+function hideToast(toastId) {
+
+  const toast = document.getElementById(toastId);
+  const toastParent = toast.parentElement;
+  const toastHeight = toast.offsetHeight;
+
+  toastParent.animate(
+    [
+      { transform: 'translateY(0px)' },
+      { transform: 'translateY(-16px)' }
+    ],
+    {
+      duration: 133,
+      fill: 'forwards',
+      easing: 'ease-in-out'
+    }
+  );
+
+  toast.animate(
+    [
+      { opacity: 1 },
+      { opacity: 0 }
+    ],
+    {
+      duration: 133,
+      fill: 'forwards',
+      easing: 'ease-in-out'
+    }
+  );
+
+  const hideAnimation = toastParent.animate(
+    [
+      { height: `${toastHeight + 16}px` },
+      { height: '0px' }
+    ],
+    {
+      delay: 133,
+      duration: 133,
+      fill: 'forwards',
+      easing: 'ease-in-out'
+    }
+  );
+
+  // Скрываем тост после завершения анимации
+  hideAnimation.onfinish = () => {
+    toast.style.visibility = 'hidden';
+    toast.style.opacity = '0';
+    console.log(`Toast ${toastId} visibility set to: ${toast.style.visibility}`);
+  };
+
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  initializeToastNotifications(); // Регистрируем обработчик события при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+  const closeButtons = document.querySelectorAll('.toast-close-button');
+
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const toast = event.target.closest('.toast');
+      if (toast) {
+        hideToast(toast.id);
+      }
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const closeButtons = document.querySelectorAll('.toast-close-button');
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const toast = event.target.closest('.toast');
+      if (toast) {
+        hideToast(toast.id);
+      }
+    });
+  });
 });

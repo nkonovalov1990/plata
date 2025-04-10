@@ -143,12 +143,12 @@ body {
 }
 .button:hover {
 	background-color: var(--neutral-80);
-	transition: background-color 60ms;
+	transition: background-color 67ms;
 }
 
 .button:active {
 	background-color: var(--neutral-120);
-	transition: background-color 60ms;
+	transition: background-color 67ms;
 }
 
 .pulse {
@@ -263,17 +263,17 @@ body {
 	padding: 12px 16px;
 	border-top: 1px solid var(--tertiary);
 	cursor: pointer;
-	transition: background-color 60ms;
+	transition: background-color 67ms;
 }
 
 .product-widget-header:hover {
 	background-color: var(--neutral-80);
-	transition: background-color 60ms;
+	transition: background-color 67ms;
 }
 
 .product-widget-header:active {
 	background-color: var(--neutral-120);
-	transition: background-color 60ms;
+	transition: background-color 67ms;
 }
 
 .header {
@@ -303,12 +303,12 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 8px 20px;
-  transition: background-color 60ms;
+  transition: background-color 67ms;
 }
 
 .flex-row:hover {
 	background-color: var(--neutral-80) !important;
-	transition: background-color 60ms;
+	transition: background-color 67ms;
 }
 
 .flex-row.interactive:hover {
@@ -517,14 +517,20 @@ body {
 	width: 360px;
 }
 
+.toast-placeholder {
+	overflow: hidden;
+	height: 0px;
+}
+
 .toast {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+	display: flex;
 	align-items: stretch;
     background-color: var(--primary);
     color: white;
     border-radius: 8px;
-	opacity: 0;
-	overflow: hidden;
+	width: 360px;
 }
 
 .toast-color-indicator {
@@ -549,12 +555,12 @@ body {
 	top: 4px;
 	right: 4px;
 	border-radius: 4px;
-	transition: background-color 60ms;
+	transition: background-color 67ms;
 }
 
 .toast-close-button:hover {
 	background-color: rgba(255, 255, 255, 0.2);
-	transition: background-color 60ms;
+	transition: background-color 67ms;
 }
 
 .toast-content {
