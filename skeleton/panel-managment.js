@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
           { transform: 'translateY(0px)' }
         ],
         {
-          delay: 133,
+          delay: 67,
           duration: 133,
           fill: 'forwards',
           easing: 'ease-in-out'
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
           { opacity: 1 }
         ],
         {
-          delay: 133,
+          delay: 67,
           duration: 133,
           fill: 'forwards',
           easing: 'ease-in-out'
