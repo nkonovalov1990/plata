@@ -155,7 +155,7 @@ function hideLeftPanel() {
     if (panel) {
         const hideAnimation = panel.animate([
             { opacity: 1, transform: 'translateX(0px)' },
-            { opacity: 0, transform: 'translateX(-20px)' }
+            { opacity: 0, transform: 'translateX(-40px)' }
         ], {
             duration: 133,
             fill: 'forwards',
