@@ -139,7 +139,7 @@ function showLeftPanel() {
     if (panel) {
         panel.style.display = "flex";
         panel.animate([
-            { opacity: 0, transform: 'translateX(-20px)' },
+            { opacity: 0, transform: 'translateX(-40px)' },
             { opacity: 1, transform: 'translateX(0px)' }
         ], {
             duration: 133,
