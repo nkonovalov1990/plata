@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					{ backgroundPositionX: "0%" },
 					{ backgroundPositionX: "50%" }
 				],
-				{ duration: 120, easing: "ease-in-out", fill: "forwards" }
+				{ duration: 133, easing: "ease-in-out", fill: "forwards" }
 			);
 		});
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					{ backgroundPositionX: "50%" },
 					{ backgroundPositionX: "0%" }
 				],
-				{ duration: 120, easing: "ease-in-out", fill: "forwards" }
+				{ duration: 133, easing: "ease-in-out", fill: "forwards" }
 			);
 		});
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					{ backgroundPositionX: "50%" },
 					{ backgroundPositionX: "100%" }
 				],
-				{ duration: 120, easing: "ease-in-out", fill: "forwards" }
+				{ duration: 133, easing: "ease-in-out", fill: "forwards" }
 			);
 		});
 
@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 					{ backgroundPositionX: "50%" }
 				],
 				{ 
-					duration: 120, 
-					delay: 120,
+					duration: 133, 
+					delay: 133,
 					easing: "ease-in-out", 
 					fill: "forwards" 
 				}
