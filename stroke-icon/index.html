@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление иконками</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .controls {
+            background: #f5f5f5;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icons-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            min-width: 60px;
+            min-height: 60px;
+        }
+
+        .icon-wrapper svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <div class="control-group">
+            <label for="size">Размер иконок:</label>
+            <input type="range" id="size" min="16" max="64" value="24">
+            <span id="size-value">24px</span>
+        </div>
+        <div class="control-group">
+            <label for="stroke">Толщина линий:</label>
+            <input type="range" id="stroke" min="1" max="4" value="2" step="0.5">
+            <span id="stroke-value">2px</span>
+        </div>
+    </div>
+    <div class="icons-container" id="icons-container"></div>
+
+    <script>
+        async function loadIcons() {
+            const iconFiles = [
+                'arrow-diagonal.svg', 'arrow-down.svg', 'arrow-left.svg', 'arrow-right.svg',
+                'arrow-up.svg', 'attention.svg', 'block.svg', 'bolt-shape.svg',
+                'check-big.svg', 'check-small.svg', 'chevron-down.svg', 'chevron-left-center.svg',
+                'chevron-left.svg', 'chevron-right-center.svg', 'chevron-right.svg',
+                'chevron-up.svg', 'clear-field-shape.svg', 'close-big.svg', 'close-small.svg',
+                'copy.svg', 'default.svg', 'delivery.svg', 'edit.svg', 'freeze.svg',
+                'loader.svg', 'minus-big.svg', 'minus-small.svg', 'paperclip.svg',
+                'plus-big.svg', 'plus-small.svg', 'search-minus.svg', 'search.svg', 'shield.svg'
+            ];
+
+            const container = document.getElementById('icons-container');
+
+            for (const iconFile of iconFiles) {
+                try {
+                    const response = await fetch(iconFile);
+                    const svgText = await response.text();
+                    
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'icon-wrapper';
+                    wrapper.innerHTML = svgText;
+                    container.appendChild(wrapper);
+                } catch (error) {
+                    console.error(`Ошибка загрузки иконки ${iconFile}:`, error);
+                }
+            }
+        }
+
+        function updateIconsSize(size) {
+            document.querySelectorAll('.icon-wrapper svg').forEach(svg => {
+                svg.style.width = `${size}px`;
+                svg.style.height = `${size}px`;
+            });
+            document.getElementById('size-value').textContent = `${size}px`;
+        }
+
+        function updateStrokeWidth(width) {
+            document.querySelectorAll('.icon-wrapper svg *').forEach(element => {
+                if (element.tagName !== 'svg') {
+                    element.style.strokeWidth = width;
+                }
+            });
+            document.getElementById('stroke-value').textContent = `${width}px`;
+        }
+
+        // Инициализация контролов
+        document.getElementById('size').addEventListener('input', (e) => {
+            updateIconsSize(e.target.value);
+        });
+
+        document.getElementById('stroke').addEventListener('input', (e) => {
+            updateStrokeWidth(e.target.value);
+        });
+
+        // Загрузка иконок при загрузке страницы
+        window.addEventListener('load', loadIcons);
+    </script>
+</body>
+</html> 
