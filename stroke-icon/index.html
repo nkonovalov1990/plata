@@ -6,23 +6,23 @@
     <title>Управление иконками</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, -apple-system, Arial, sans-serif;
             padding: 0;
             margin: 0;
         }
 
         .controls {
-            background: #f5f5f5;
+            background: #E5E4E2;
             padding: 24px;
             border-bottom: 1px solid #ddd;
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 40px;
         }
 
         .control-group {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 8px;
             min-width: 200px;
         }
@@ -42,7 +42,7 @@
             flex-wrap: wrap;
             gap: 20px;
             padding: 24px;
-            min-height: 200px;
+            min-height: 100vh;
             border-top: 1px solid #eee;
             position: relative;
             align-items: flex-start;
@@ -81,6 +81,11 @@
     </style>
 </head>
 <body>
+    <div class="control-group">
+        <label for="file-input">Загрузить SVG-иконки</label>
+        <input type="file" id="file-input" accept=".svg" multiple>
+    </div>
+
     <div class="controls">
         <div class="control-group">
             <label for="size">Размер иконок</label>
@@ -94,11 +99,6 @@
             <span id="stroke-value">1.5</span>
         </div>
 
-        <div class="control-group">
-            <label for="file-input">Загрузить SVG-иконки</label>
-            <input type="file" id="file-input" accept=".svg" multiple>
-            <div class="hint">Можно выбрать несколько файлов или перетащить их в область ниже.</div>
-        </div>
     </div>
 
     <div class="icons-container empty" id="icons-container"></div>
