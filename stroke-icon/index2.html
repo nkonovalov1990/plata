@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление иконками</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .controls {
+            background: #f5f5f5;
+            padding: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 40px;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icons-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            min-width: 32px;
+            min-height: 32px;
+            background: #fff;
+        }
+
+        .icon-wrapper svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <div class="control-group">
+            <label for="size">Размер иконок</label>
+            <input type="range" id="size" min="8" max="256" value="128">
+            <span id="size-value">128px</span>
+        </div>
+
+        <div class="control-group">
+            <label for="stroke">Толщина линий</label>
+            <input type="range" id="stroke" min="0.1" max="2" value="1.5" step="0.1">
+            <span id="stroke-value">1.5</span>
+        </div>
+
+        <div class="control-group">
+            <label for="file-input">Загрузить SVG</label>
+            <input
+                type="file"
+                id="file-input"
+                accept=".svg,image/svg+xml"
+                multiple
+            >
+        </div>
+    </div>
+
+    <div class="icons-container" id="icons-container"></div>
+
+    <script>
+        const container = document.getElementById('icons-container');
+        const sizeInput = document.getElementById('size');
+        const strokeInput = document.getElementById('stroke');
+        const sizeValue = document.getElementById('size-value');
+        const strokeValue = document.getElementById('stroke-value');
+        const fileInput = document.getElementById('file-input');
+
+        function updateIconsSize(size) {
+            document.querySelectorAll('.icon-wrapper svg').forEach(svg => {
+                svg.style.width = `${size}px`;
+                svg.style.height = `${size}px`;
+            });
+            sizeValue.textContent = `${size}px`;
+        }
+
+        function updateStrokeWidth(width) {
+            document.querySelectorAll('.icon-wrapper svg *').forEach(element => {
+                if (element.tagName.toLowerCase() !== 'svg') {
+                    element.style.strokeWidth = width;
+                }
+            });
+            strokeValue.textContent = `${width}`;
+        }
+
+        function applyCurrentControls() {
+            updateIconsSize(sizeInput.value);
+            updateStrokeWidth(strokeInput.value);
+        }
+
+        function addIconFromSvgText(svgText) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'icon-wrapper';
+            wrapper.innerHTML = svgText.trim();
+            container.appendChild(wrapper);
+            // Применяем текущие значения размеров и толщины к только что добавленной иконке
+            applyCurrentControls();
+        }
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                // Фильтруем не-SVG файлы
+                const isSvgByType = file.type === 'image/svg+xml';
+                const isSvgByName = file.name.toLowerCase().endsWith('.svg');
+
+                if (!isSvgByType && !isSvgByName) {
+                    console.warn(`Файл "${file.name}" не похож на SVG и будет пропущен.`);
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const svgText = event.target.result;
+                    addIconFromSvgText(svgText);
+                };
+                reader.onerror = () => {
+                    console.error(`Ошибка чтения файла "${file.name}"`);
+                };
+                reader.readAsText(file);
+            });
+        }
+
+        // Обработчики контролов
+        sizeInput.addEventListener('input', (e) => {
+            updateIconsSize(e.target.value);
+        });
+
+        strokeInput.addEventListener('input', (e) => {
+            updateStrokeWidth(e.target.value);
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const files = e.target.files;
+            if (!files || !files.length) return;
+            handleFiles(files);
+            // после выбора файлов можно снова выбрать те же — очищаем value
+            e.target.value = '';
+        });
+    </script>
+</body>
+</html>
